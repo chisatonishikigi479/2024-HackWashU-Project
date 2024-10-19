@@ -1,8 +1,8 @@
 extends Node2D
 
 var maze
-var xdim = 5
-var ydim = 5
+var xdim = 7
+var ydim = 7
 var offsetY = 23
 var offsetX = -11
 var wallunit = 160
