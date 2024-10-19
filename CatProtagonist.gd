@@ -27,7 +27,7 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 	
-	$AnimatedSprite2D.flip_h = not isMovingRight
+	$AnimatedSprite2D.flip_h = isMovingRight
 	
 	if velocity.x > 0:
 		isMovingRight = true
