@@ -32,8 +32,6 @@ func _on_difficulty_button_r_pressed() -> void:
 			Globalvariables.difficulty = "Medium"
 	get_node("MarginContainer/DifficultyLabel").text = str("Difficulty: " + Globalvariables.difficulty)
 
-	
-
 func _on_difficulty_button_l_pressed() -> void:
 	if Globalvariables.difficulty == "Easy":
 		Globalvariables.difficulty = "Extreme"
