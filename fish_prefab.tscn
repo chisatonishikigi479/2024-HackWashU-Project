@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://83qf3hxao1sg"]
+
+[ext_resource type="Script" path="res://FishPrefab.gd" id="1_wdlxt"]
+[ext_resource type="Texture2D" uid="uid://d0g7gkq3by62y" path="res://fish.png" id="2_h67it"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vlva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h67it")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl68l"]
+size = Vector2(86, 80)
+
+[node name="FishPrefab" type="Area2D"]
+script = ExtResource("1_wdlxt")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7vlva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_yl68l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

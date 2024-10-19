@@ -18,7 +18,7 @@ animations = [{
 [node name="MazeGenerationManager" type="Node2D"]
 script = ExtResource("1_5lm7m")
 
-[node name="CatProtagonist" parent="." instance=ExtResource("2_xcoxq")]
+[node name="CatProtagonist" parent="." groups=["protagonist"] instance=ExtResource("2_xcoxq")]
 position = Vector2(76, 592)
 
 [node name="CatCamera" type="Camera2D" parent="CatProtagonist"]
