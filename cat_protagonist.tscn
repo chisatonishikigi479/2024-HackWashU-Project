@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://i7dmty6sm44l"]
+[gd_scene load_steps=7 format=3 uid="uid://i7dmty6sm44l"]
 
 [ext_resource type="Script" path="res://CatProtagonist.gd" id="1_xybh4"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="2_8ckj2"]
 [ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="3_elnbc"]
+[ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="4_ij4go"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8m8o"]
 animations = [{
@@ -12,6 +13,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_elnbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ij4go")
 }],
 "loop": true,
 "name": &"walk",
