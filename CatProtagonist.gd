@@ -13,14 +13,26 @@ func _physics_process(delta):
 	var velocity := Vector2.ZERO
 
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
+		if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
+			velocity.x -= speed/1.4
+		else:
+			velocity.x -= speed
 	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
+		if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
+			velocity.x += speed/1.4
+		else:
+			velocity.x += speed
 
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= speed
+		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+			velocity.y -= speed/1.4
+		else:
+			velocity.y -= speed
 	if Input.is_action_pressed("move_down"):
-		velocity.y += speed
+		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+			velocity.y += speed/1.4
+		else:
+			velocity.y += speed
 
 	if (velocity.length() > 0):
 		$AnimatedSprite2D.play("walk")
