@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://drbx1k3n814mg"]
+[gd_scene load_steps=12 format=3 uid="uid://drbx1k3n814mg"]
 
 [ext_resource type="Script" path="res://vase_minigame.gd" id="1_ykelr"]
 [ext_resource type="Texture2D" uid="uid://b1fynu0dglwbt" path="res://book.png" id="2_qlnlb"]
 [ext_resource type="Script" path="res://Vase.gd" id="3_b573w"]
 [ext_resource type="Texture2D" uid="uid://bxhojxhc8bkh1" path="res://vase.png" id="3_x033j"]
+[ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="5_chai6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cnxa3"]
 animations = [{
@@ -35,6 +36,17 @@ size = Vector2(287, 319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi1j2"]
 size = Vector2(1728, 202)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7r3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_chai6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="VaseMinigame" type="Node2D"]
 script = ExtResource("1_ykelr")
@@ -95,6 +107,14 @@ offset_right = 1162.0
 offset_bottom = 716.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Use the left and right keys to stabilize the vase!"
+
+[node name="BG" type="Area2D" parent="."]
+z_index = -4000
+position = Vector2(651, 355)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
+sprite_frames = SubResource("SpriteFrames_y7r3u")
 
 [connection signal="area_entered" from="Vase" to="Vase" method="_on_area_entered"]
 [connection signal="vase_broken" from="Vase" to="." method="_on_vase_vase_broken" flags=6]
