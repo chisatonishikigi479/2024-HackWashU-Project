@@ -35,20 +35,20 @@ func _process(delta):
 			if minigame == 0:
 				minigamescreen = vaseminigamescene.instantiate()
 				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 800
+				minigamescreen.z_index = 4050
 				minigamescreen.set_visible(true)
 			elif minigame == 1:
 				#change this later to minigame 1
 				minigamescreen = vaseminigamescene.instantiate()
 				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 800
+				minigamescreen.z_index = 4050
 				minigamescreen.set_visible(true)
 				pass
 			elif minigame == 2:
 				#change this later to minigame 2
 				minigamescreen = vaseminigamescene.instantiate()
 				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 800
+				minigamescreen.z_index = 4050
 				minigamescreen.set_visible(true)
 				pass
 			visible = false
