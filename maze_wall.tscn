@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlfb4lrpdddiw"]
+
+[ext_resource type="Script" path="res://MazeWall.gd" id="1_tna43"]
+[ext_resource type="Texture2D" uid="uid://dq862k26kecc7" path="res://wall.png" id="2_abd5w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_deapq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_abd5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibevc"]
+size = Vector2(19, 163)
+
+[node name="MazeWall" type="StaticBody2D"]
+script = ExtResource("1_tna43")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_deapq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ibevc")

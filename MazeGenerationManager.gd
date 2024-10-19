@@ -9,6 +9,7 @@ var wallunit = 160
 var walls = []
 var chests = []
 var treasure_coords 
+var mazewall = preload("res://maze_wall.tscn")
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,26 +42,26 @@ func generate_walls(maze):
 	for edge in maze:
 		#case 1: horizontal edge
 		if edge.vertex1.coords.y == edge.vertex2.coords.y:
-			#var wall = mazewall.instantiate()
-			#walls.append(wall)
-			#wall.add_to_group("walls")
-			#add_child(wall)
-			#wall.global_position = Vector2(min(edge.vertex1.coords.x, edge.vertex2.coords.x)*wallunit + 50 - offsetX, edge.vertex1.coords.y * wallunit - 50 + offsetY)
-			#print("generated wall at " + str(wall.global_position))
-			#wall.set_visible(true)
+			var wall = mazewall.instantiate()
+			walls.append(wall)
+			wall.add_to_group("walls")
+			add_child(wall)
+			wall.global_position = Vector2(min(edge.vertex1.coords.x, edge.vertex2.coords.x)*wallunit + (wallunit / 2) - offsetX, edge.vertex1.coords.y * wallunit - (wallunit / 2) + offsetY)
+			print("generated wall at " + str(wall.global_position))
+			wall.set_visible(true)
 			pass
 			
 		#case 2: vertical edge (will have to rotate the sprite by 90 degrees)
 		elif edge.vertex1.coords.x == edge.vertex2.coords.x:
 			
-			#var wall = mazewall.instantiate()
-			#walls.append(wall)
-			#wall.add_to_group("walls")
-			#add_child(wall)
-			#wall.rotation_degrees = 90
-			#wall.global_position = Vector2(edge.vertex1.coords.x * wallunit - offsetX, min(edge.vertex1.coords.y, edge.vertex2.coords.y)*wallunit + offsetY)
-			#print("generated wall at " + str(wall.global_position))
-			#wall.set_visible(true)
+			var wall = mazewall.instantiate()
+			walls.append(wall)
+			wall.add_to_group("walls")
+			add_child(wall)
+			wall.rotation_degrees = 90
+			wall.global_position = Vector2(edge.vertex1.coords.x * wallunit - offsetX, min(edge.vertex1.coords.y, edge.vertex2.coords.y)*wallunit + offsetY)
+			print("generated wall at " + str(wall.global_position))
+			wall.set_visible(true)
 	
 			pass
 			

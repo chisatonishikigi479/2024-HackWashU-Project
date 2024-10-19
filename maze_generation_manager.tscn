@@ -7,5 +7,6 @@
 script = ExtResource("1_5lm7m")
 
 [node name="CatProtagonist" parent="." instance=ExtResource("2_xcoxq")]
+position = Vector2(76, 592)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="CatCamera" type="Camera2D" parent="CatProtagonist"]
