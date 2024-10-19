@@ -8,7 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("move_left"):
+		_on_difficulty_button_r_pressed()
+	if Input.is_action_just_pressed("move_right"):
+		_on_difficulty_button_r_pressed()
+	if Input.is_action_just_pressed("enter") or Input.is_action_just_pressed("space"):
+		_on_start_button_pressed()
 
 func _on_start_button_pressed() -> void:
 	pressed +=1 #prevents multiple generations

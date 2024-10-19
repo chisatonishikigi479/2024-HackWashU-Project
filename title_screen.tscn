@@ -18,25 +18,26 @@ grow_vertical = 2
 script = ExtResource("1_b8huk")
 
 [node name="TitleScreenBg" type="Sprite2D" parent="."]
-position = Vector2(596, 332)
+position = Vector2(641, 360)
 texture = ExtResource("2_6oun6")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 301.0
+offset_left = 378.0
 offset_top = 113.0
-offset_right = 850.0
+offset_right = 927.0
 offset_bottom = 290.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 100
 text = "Start"
 script = ExtResource("2_tpggw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 417.0
-offset_right = 892.0
-offset_bottom = 513.0
+offset_left = 345.0
+offset_top = 428.0
+offset_right = 965.0
+offset_bottom = 524.0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -50,19 +51,21 @@ script = ExtResource("4_f02rt")
 
 [node name="DifficultyButtonR" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 922.0
-offset_top = 402.0
-offset_right = 1082.0
-offset_bottom = 562.0
+offset_left = 1000.0
+offset_top = 416.0
+offset_right = 1160.0
+offset_bottom = 576.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_s3yda")
 script = ExtResource("4_xi7pi")
 
 [node name="DifficultyButtonL" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 399.0
-offset_right = 251.0
-offset_bottom = 559.0
+offset_left = 164.0
+offset_top = 416.0
+offset_right = 324.0
+offset_bottom = 576.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_c3pef")
 script = ExtResource("4_xi7pi")
 
