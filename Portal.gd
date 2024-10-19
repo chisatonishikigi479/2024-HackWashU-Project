@@ -9,6 +9,8 @@ var minigame = 0
 var alreadyEmittedSignal = false
 
 var minigamescreen = null
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -27,7 +29,9 @@ func _process(delta):
 		enteredTime += delta
 		if (enteredTime >= enteredDelay):
 			entered = false
+			Globalvariables.inMinigame = true
 			#TODO: instantiate minigame screen here depending on the value of minigame
+			#Remember to change that variable to false after minigame exited!
 			
 			visible = false
 	pass
