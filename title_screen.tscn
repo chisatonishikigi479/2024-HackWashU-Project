@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://g2yvh1h15ju1"]
+[gd_scene load_steps=6 format=3 uid="uid://g2yvh1h15ju1"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_b8huk"]
 [ext_resource type="Texture2D" uid="uid://dy871bvw5q2e7" path="res://title_screen_bg.png" id="2_6oun6"]
 [ext_resource type="Script" path="res://start_button.gd" id="2_tpggw"]
+[ext_resource type="Texture2D" uid="uid://twfh7rmwf8xx" path="res://difficultybuttonR.png" id="4_s3yda"]
 [ext_resource type="Script" path="res://difficulty_button_r.gd" id="4_xi7pi"]
 
 [node name="Title Screen" type="Control"]
@@ -46,10 +47,12 @@ vertical_alignment = 1
 
 [node name="DifficultyButtonR" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 852.0
-offset_top = 316.0
-offset_right = 1181.0
-offset_bottom = 616.0
+offset_left = 860.0
+offset_top = 391.0
+offset_right = 1020.0
+offset_bottom = 551.0
+texture_normal = ExtResource("4_s3yda")
 script = ExtResource("4_xi7pi")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="DifficultyButtonR" to="." method="_on_difficulty_button_r_pressed"]

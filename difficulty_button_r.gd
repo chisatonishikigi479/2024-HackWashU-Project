@@ -11,3 +11,4 @@ func _ready() -> void:
 		bitmap.create_from_image_alpha(image)
 		# Assign it to the mask
 		texture_click_mask = bitmap
+		
