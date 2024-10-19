@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://3vqkr350j7e5"]
+[gd_scene load_steps=3 format=3 uid="uid://3vqkr350j7e5"]
 
 [ext_resource type="Script" path="res://MazeGenerationManager.gd" id="1_5lm7m"]
+[ext_resource type="PackedScene" uid="uid://i7dmty6sm44l" path="res://cat_protagonist.tscn" id="2_xcoxq"]
 
 [node name="MazeGenerationManager" type="Node2D"]
 script = ExtResource("1_5lm7m")
+
+[node name="CatProtagonist" parent="." instance=ExtResource("2_xcoxq")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]

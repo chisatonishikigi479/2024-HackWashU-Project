@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://i7dmty6sm44l"]
+
+[ext_resource type="Script" path="res://CatProtagonist.gd" id="1_xybh4"]
+[ext_resource type="Texture2D" uid="uid://cw0bvf1j5a44" path="res://cat.png" id="2_s6vco"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8m8o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s6vco")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynwv4"]
+size = Vector2(108, 101)
+
+[node name="CatProtagonist" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_xybh4")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -0.249998)
+scale = Vector2(0.65625, 0.628125)
+sprite_frames = SubResource("SpriteFrames_o8m8o")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ynwv4")

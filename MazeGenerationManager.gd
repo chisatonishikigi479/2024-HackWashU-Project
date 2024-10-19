@@ -5,7 +5,7 @@ var xdim = 10
 var ydim = 6
 var offsetY = 23
 var offsetX = -11
-var wallunit = 105
+var wallunit = 160
 var walls = []
 var chests = []
 var treasure_coords 
