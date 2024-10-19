@@ -89,6 +89,7 @@ offset_left = 764.0
 offset_top = 10.0
 offset_right = 1135.0
 offset_bottom = 164.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Seconds Elapsed: 0/30"
 
@@ -98,6 +99,7 @@ offset_left = 772.0
 offset_top = 161.0
 offset_right = 1150.0
 offset_bottom = 316.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Failed! -5 Karma"
 
@@ -106,6 +108,7 @@ offset_left = 8.0
 offset_top = 562.0
 offset_right = 1162.0
 offset_bottom = 716.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Use the left and right keys to stabilize the vase!"
 
