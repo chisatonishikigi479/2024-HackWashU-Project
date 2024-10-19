@@ -1,8 +1,11 @@
 extends Node2D
 
 var maze
-var xdim = 7
-var ydim = 7
+var EASY_DIM = 7
+var MEDIUM_DIM = 12
+var HARD_DIM = 12
+var EXTREME_DIM = 12
+var dim = 7
 var offsetY = 23
 var offsetX = -11
 var wallunit = 160
@@ -14,7 +17,8 @@ var fishscene = preload("res://fish_prefab.tscn")
 var fisharray = []
 var portalscene = preload("res://portal.tscn")
 var portalarray = []
-
+var xdim
+var ydim
 
 var fishkarma = 0
 var isBuffered = false
@@ -25,6 +29,16 @@ var karma = 0
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Globalvariables.difficulty == "Easy":
+		dim = EASY_DIM
+	if Globalvariables.difficulty == "Medium":
+		dim = MEDIUM_DIM
+	if Globalvariables.difficulty == "Hard":
+		dim = HARD_DIM
+	if Globalvariables.difficulty == "Extreme":
+		dim = EXTREME_DIM
+	xdim = dim
+	ydim = dim
 	maze = generate_maze(xdim, ydim)
 	print("MAZE: ")
 	for edge in maze:
