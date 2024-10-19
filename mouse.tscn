@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcqquh4wutm7j"]
+
+[ext_resource type="Script" path="res://Mouse.gd" id="1_5ii1f"]
+[ext_resource type="Texture2D" uid="uid://ceos2bdcgjtt3" path="res://mouse.png" id="2_47qyb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n61e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_47qyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmh7"]
+size = Vector2(95, 84)
+
+[node name="Mouse" type="Area2D" groups=["mice"]]
+script = ExtResource("1_5ii1f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.999994, -3.8147e-06)
+scale = Vector2(0.6125, 0.55625)
+sprite_frames = SubResource("SpriteFrames_n61e7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 2)
+shape = SubResource("RectangleShape2D_cmmh7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

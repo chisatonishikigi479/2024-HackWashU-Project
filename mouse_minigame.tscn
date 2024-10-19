@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfw57ktt34u58"]
+
+[ext_resource type="Script" path="res://mouse_minigame.gd" id="1_bva7x"]
+[ext_resource type="Texture2D" uid="uid://cw0bvf1j5a44" path="res://cat.png" id="2_6wc0j"]
+[ext_resource type="Script" path="res://Cat.gd" id="2_hvomw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opoyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6wc0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2mvr"]
+size = Vector2(97, 91)
+
+[node name="MouseMinigame" type="Node2D"]
+script = ExtResource("1_bva7x")
+
+[node name="Cat" type="Area2D" parent="." groups=["cat"]]
+position = Vector2(640, 360)
+script = ExtResource("2_hvomw")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
+position = Vector2(1, 1)
+scale = Vector2(0.6375, 0.575)
+sprite_frames = SubResource("SpriteFrames_opoyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+position = Vector2(2.5, -0.5)
+shape = SubResource("RectangleShape2D_a2mvr")
+
+[node name="RoundLabel" type="RichTextLabel" parent="."]
+offset_left = 811.0
+offset_top = 8.0
+offset_right = 1304.0
+offset_bottom = 134.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Round 1 of 5"
+
+[node name="KarmaLabel" type="RichTextLabel" parent="."]
+offset_left = 822.0
+offset_top = 98.0
+offset_right = 1223.0
+offset_bottom = 209.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Karma Lost: 0"
+
+[node name="ResultsLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 819.0
+offset_top = 169.0
+offset_right = 1245.0
+offset_bottom = 436.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Success! +10 Karma"
+
+[connection signal="area_entered" from="Cat" to="Cat" method="_on_area_entered"]
+[connection signal="ateMouse" from="Cat" to="." method="_on_cat_ate_mouse"]
