@@ -76,7 +76,7 @@ func generate_walls(maze):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-
+	$BG.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
 
 	
 	pass
