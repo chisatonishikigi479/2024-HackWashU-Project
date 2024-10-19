@@ -8,5 +8,5 @@
 [node name="Player" parent="." instance=ExtResource("1_utj74")]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(656, 419)
+position = Vector2(634, 415)
 texture = ExtResource("2_eeklc")
