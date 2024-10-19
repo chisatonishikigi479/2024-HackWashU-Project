@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=3 uid="uid://g2yvh1h15ju1"]
-=======
-[gd_scene load_steps=5 format=3 uid="uid://d0mjm7jbj6001"]
->>>>>>> eeb856c630b076ffd8dc000530cc0b796a3133fd
+[gd_scene load_steps=5 format=3 uid="uid://g2yvh1h15ju1"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_b8huk"]
 [ext_resource type="Texture2D" uid="uid://dy871bvw5q2e7" path="res://title_screen_bg.png" id="2_6oun6"]
