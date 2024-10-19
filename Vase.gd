@@ -7,7 +7,9 @@ var succeeded = false
 var brokenTime = 0.0
 var brokenTimeDelay = 3.0
 var velocity = 0.0
-var rotationAcceleration = 45.0
+var rotationAcceleration = 0
+var rotationDelay = 1.0
+var finalRotationAcceleration = 45
 var correctingVelocity = 180.0
 var leftBound = 125.0
 var fallingVelocity = 0.0
@@ -34,21 +36,19 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.play("default")
 		if not succeeded:
-			
+			if get_parent().elapsed_time <= rotationDelay: #only reaches maximum acceleratiion after x seconds
+				rotationAcceleration = finalRotationAcceleration * (get_parent().elapsed_time/rotationDelay)
 			if Input.is_action_just_released("move_right") or Input.is_action_just_released("move_left"):
-				if (int(rotation_degrees + 360) % 360 >= 120) or (int(rotation_degrees + 360) % 360 <= 3):
-					velocity = 0
+				velocity = 0
 				
 			if (not Input.is_action_pressed("move_right")) and (not Input.is_action_pressed("move_left")):
 				if not fellOff:
-					if int(rotation_degrees + 360) % 360 >= 270 or int(rotation_degrees + 360) % 360 <= 3:
+					if int(rotation_degrees + 360) % 360 >= 270:
 						velocity += rotationAcceleration * delta
 						rotation_degrees -= velocity * delta
-					elif int(rotation_degrees + 360) % 360 <= 150 and int(rotation_degrees + 360) % 360 > 3:
+					else:
 						velocity += rotationAcceleration * delta
 						rotation_degrees += velocity * delta
-					
-				
 			else: 
 				print("input pressed")
 				if Input.is_action_pressed("move_right"):
@@ -58,21 +58,17 @@ func _process(delta):
 					velocity = correctingVelocity
 					rotation_degrees -= velocity * delta
 				
-			if (int(rotation_degrees + 360) % 360 <= 320 and int(rotation_degrees + 360) % 360 >= 250):
+			if (int(rotation_degrees + 360) % 360 <= 310 and int(rotation_degrees + 360) % 360 >= 250):
 				fellOff = true
 				
 			if (int(rotation_degrees + 360) % 360 >= 90 and int(rotation_degrees + 360) % 360 <= 150):
 				isBroken = true
 				
 			if fellOff:
-
 				position.x -= fallingLeftVelocity * delta
 				fallingVelocity += gravity * delta
 				position.y += fallingVelocity
 				rotation_degrees -= fallingVelocity * delta
-				
-				
-				
 			pass
 		
 		
