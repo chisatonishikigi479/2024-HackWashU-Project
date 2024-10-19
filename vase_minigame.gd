@@ -32,6 +32,7 @@ func _process(delta):
 				
 			endingTime += delta
 			if (endingTime >= endingDelay):
+				Globalvariables.inMinigame = false
 				queue_free()
 			
 	pass

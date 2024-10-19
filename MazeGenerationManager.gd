@@ -3,8 +3,8 @@ extends Node2D
 var maze
 var EASY_DIM = 7
 var MEDIUM_DIM = 12
-var HARD_DIM = 12
-var EXTREME_DIM = 12
+var HARD_DIM = 20
+var EXTREME_DIM = 25
 var dim = 7
 var offsetY = 23
 var offsetX = -11
@@ -155,7 +155,7 @@ func _process(delta):
 	$GiganticAssBlackScreen.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
 	
 	
-	if Globalvariables.difficulty == "hell":
+	if Globalvariables.difficulty == "Extreme":
 		$GiganticAssBlackScreen.visible = true
 	else:
 		$GiganticAssBlackScreen.visible = false
