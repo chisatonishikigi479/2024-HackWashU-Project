@@ -5,6 +5,8 @@ var moveSpeed = 300
 signal ateMouse
 var detectionRange = 500
 var enticingSpeed = 225
+var isMovingRight = true
+var lastPos: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,6 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	if Input.is_action_pressed("move_left"):
 		position.x -= moveSpeed*delta
 	if Input.is_action_pressed("move_right"):
@@ -45,6 +48,18 @@ func _process(delta):
 	position.x = clamp(position.x, 0, 1280)
 	position.y = clamp(position.y, 0, 720)
 	
+	if position.x - lastPos.x > 0:
+		$AnimatedSprite2D.play("default")
+		isMovingRight = true
+	elif position.x - lastPos.x < 0:
+		$AnimatedSprite2D.play("default")
+		isMovingRight = false
+	else:
+		$AnimatedSprite2D.stop()
+		
+	$AnimatedSprite2D.flip_h = not isMovingRight
+	
+	lastPos = position
 	pass
 	
 
