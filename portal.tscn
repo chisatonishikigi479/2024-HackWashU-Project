@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://w2j4tyghki3e"]
+
+[ext_resource type="Script" path="res://Portal.gd" id="1_f2y0d"]
+[ext_resource type="Texture2D" uid="uid://djpbxa1222adk" path="res://portal.png" id="2_tuuk6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g505u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tuuk6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us1ac"]
+size = Vector2(126, 138)
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_f2y0d")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.999998, 3)
+scale = Vector2(0.7875, 0.85625)
+sprite_frames = SubResource("SpriteFrames_g505u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_us1ac")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

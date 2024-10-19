@@ -1,8 +1,8 @@
 extends Node2D
 
 var maze
-var xdim = 10
-var ydim = 10
+var xdim = 7
+var ydim = 7
 var offsetY = 23
 var offsetX = -11
 var wallunit = 160
@@ -12,11 +12,16 @@ var fish_coords: Array
 var mazewall = preload("res://maze_wall.tscn")
 var fishscene = preload("res://fish_prefab.tscn")
 var fisharray = []
+var portalscene = preload("res://portal.tscn")
+var portalarray = []
+
+
 var fishkarma = 0
 var isBuffered = false
 var bufferTimeLimit = 2.0
 var bufferTime = 0.0
 var karma = 0
+
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +36,7 @@ func _ready():
 			if (randomVariable == 0):
 				fish_coords.append(Vector2(i, j))
 				
+	
 	generate_walls(maze)
 	#when the player dies, regenerate the maze from the player node (call reset_variables from there)
 	pass # Replace with function body.
@@ -59,6 +65,10 @@ func generate_walls(maze):
 	for chest in chests:
 		chest.queue_free()
 	chests = []
+	
+	for portal in portalarray:
+		portal.queue_free()
+	portalarray = []
 	
 	for edge in maze:
 		#case 1: horizontal edge
@@ -95,6 +105,29 @@ func generate_walls(maze):
 			fish.collect.connect(self._on_fish_collected)
 			fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
 			fish.set_visible(true)
+			
+			
+	var minigameindices = [0, 1, 2]
+	minigameindices.shuffle()
+	
+	var setOfCoords = []
+	for i in range (xdim):
+		for j in range (xdim):
+			setOfCoords.append(Vector2(i, j))	
+	setOfCoords.shuffle()
+	
+	#spawn portals
+	for i in range (minigameindices.size()):
+		var targetMinigame = minigameindices[i]
+		var portal = portalscene.instantiate()
+		portal.minigame = targetMinigame
+		portalarray.append(portal)
+		portal.add_to_group("portals")
+		add_child(portal)
+		portal.z_index = 200
+		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
+		
+	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
