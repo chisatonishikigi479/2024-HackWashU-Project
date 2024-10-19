@@ -8,8 +8,14 @@ var offsetX = -11
 var wallunit = 160
 var walls = []
 var chests = []
-var treasure_coords 
+var fish_coords: Array
 var mazewall = preload("res://maze_wall.tscn")
+var fishscene = preload("res://fish_prefab.tscn")
+var fisharray = []
+var fishkarma = 0
+var isBuffered = false
+var bufferTimeLimit = 2.0
+var bufferTime = 0.0
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,19 +24,33 @@ func _ready():
 	for edge in maze:
 		print(edge.string_ver())
 		
-	treasure_coords = Vector2(randi() % xdim, randi() % ydim)
+	for i in range (xdim):
+		for j in range (ydim):
+			var randomVariable = randi() % 25
+			if (randomVariable == 0):
+				fish_coords.append(Vector2(i, j))
+				
 	generate_walls(maze)
 	#when the player dies, regenerate the maze from the player node (call reset_variables from there)
 	pass # Replace with function body.
 
+func _on_fish_collected():
+	if not isBuffered:
+		fishkarma += 1
+		isBuffered = true
+		print("fish karma: " + str(fishkarma))
 
 func reset_variables():
 	maze = generate_maze(xdim, ydim)
-	treasure_coords = Vector2(randi() % xdim, randi() % ydim)
+	
 	generate_walls(maze)
 	
 	
 func generate_walls(maze):
+	for fish in fisharray:
+		fish.queue_free()
+	fisharray = []
+	
 	for wall in walls:
 		wall.queue_free()
 	walls = []
@@ -64,20 +84,27 @@ func generate_walls(maze):
 			wall.set_visible(true)
 	
 			pass
-			
-	#var treasure = treasurechest.instantiate()
-	#chests.append(treasure)
-	#treasure.add_to_group("treasurechests")
-	#add_child(treasure)
-	##bruh bruh bruh test test test
-	#treasure.global_position = Vector2(treasure_coords.x * wallunit + 69, treasure_coords.y * wallunit + offsetY)
-	#treasure.set_visible(true)
+	
+		for coord in fish_coords:	
+			var fish = fishscene.instantiate()
+			fisharray.append(fish)
+			fish.add_to_group("fish")
+			add_child(fish)
+			fish.z_index = 400
+			fish.collect.connect(self._on_fish_collected)
+			fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
+			fish.set_visible(true)
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	$BG.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
 
+	if isBuffered:
+		bufferTime += delta
+		if bufferTime > bufferTimeLimit:
+			bufferTime = 0
+			isBuffered = false
 	
 	pass
 
@@ -182,8 +209,10 @@ func generate_maze (m, n):
 				intersects_inner = true
 				
 		if not intersects_inner:
-			mazeedges.append(outeredge)
-
+			if not ((outeredge.vertex1.coords.x == xdim and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim-1 and outeredge.vertex2.coords.y == ydim) or (outeredge.vertex1.coords.x == xdim-1 and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim and outeredge.vertex2.coords.y == ydim)):
+				mazeedges.append(outeredge)
+	
+	
 	return mazeedges
 
 
