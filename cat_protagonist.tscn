@@ -1,17 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://i7dmty6sm44l"]
+[gd_scene load_steps=6 format=3 uid="uid://i7dmty6sm44l"]
 
 [ext_resource type="Script" path="res://CatProtagonist.gd" id="1_xybh4"]
-[ext_resource type="Texture2D" uid="uid://cw0bvf1j5a44" path="res://cat.png" id="2_s6vco"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0txk"]
+load_path = "res://.godot/imported/cat_protagonist-0.png-d29f93f44d10d1e861f57f2e3e5d48d5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b4ki1"]
+load_path = "res://.godot/imported/cat_protagonist-1.png-e3ddf47eb8a0ba98a6f82d5c43b3e319.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8m8o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s6vco")
+"texture": SubResource("CompressedTexture2D_p0txk")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_b4ki1")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynwv4"]
@@ -24,7 +32,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, -0.874998)
-scale = Vector2(0.53125, 0.489062)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8m8o")
 animation = &"walk"
 
