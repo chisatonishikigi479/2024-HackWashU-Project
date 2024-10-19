@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgyor45ccq1cr"]
+
+[ext_resource type="Texture2D" uid="uid://m0tlstmis5m" path="res://giganticassblackscreen.png" id="1_25nj6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hojg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_25nj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GiganticAssBlackScreen" type="Area2D"]
+z_index = 300
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6hojg")

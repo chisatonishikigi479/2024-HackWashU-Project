@@ -1,8 +1,8 @@
 extends Node2D
 
 var maze
-var xdim = 7
-var ydim = 7
+var xdim = 10
+var ydim = 10
 var offsetY = 23
 var offsetX = -11
 var wallunit = 160
@@ -90,15 +90,23 @@ func generate_walls(maze):
 			fisharray.append(fish)
 			fish.add_to_group("fish")
 			add_child(fish)
-			fish.z_index = 400
+			fish.z_index = 200
 			fish.collect.connect(self._on_fish_collected)
 			fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
 			fish.set_visible(true)
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	$FishLabel.text = "Fish Collected: " + str(fishkarma)
+	$FishLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -300)
 	$BG.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
+	$GiganticAssBlackScreen.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
+	
+	if Globalvariables.difficulty == "hell":
+		$GiganticAssBlackScreen.visible = true
+	else:
+		$GiganticAssBlackScreen.visible = false
+
 
 	if isBuffered:
 		bufferTime += delta
