@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://i7dmty6sm44l"]
+[gd_scene load_steps=6 format=3 uid="uid://i7dmty6sm44l"]
 
 [ext_resource type="Script" path="res://CatProtagonist.gd" id="1_xybh4"]
-[ext_resource type="Texture2D" uid="uid://cw0bvf1j5a44" path="res://cat.png" id="2_s6vco"]
+[ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="2_8ckj2"]
+[ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="3_elnbc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8m8o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s6vco")
+"texture": ExtResource("2_8ckj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_elnbc")
 }],
 "loop": true,
 "name": &"walk",
@@ -24,7 +28,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, -0.874998)
-scale = Vector2(0.53125, 0.489062)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8m8o")
 animation = &"walk"
 
