@@ -9,7 +9,7 @@ var wallunit = 105
 var walls = []
 var chests = []
 var treasure_coords 
-
+#comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	maze = generate_maze(xdim, ydim)
