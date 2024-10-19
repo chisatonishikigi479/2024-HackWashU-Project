@@ -28,6 +28,7 @@ func _process(delta):
 		$AnimatedSprite2D.play("break")
 		brokenTime += delta
 		if brokenTime >= brokenTimeDelay:
+			Globalvariables.inMinigame = false
 			queue_free()
 			get_parent().queue_free()
 	else:
