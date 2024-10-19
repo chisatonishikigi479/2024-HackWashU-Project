@@ -16,6 +16,7 @@ var fishkarma = 0
 var isBuffered = false
 var bufferTimeLimit = 2.0
 var bufferTime = 0.0
+var karma = 0
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -99,8 +100,13 @@ func generate_walls(maze):
 func _process(delta):
 	$FishLabel.text = "Fish Collected: " + str(fishkarma)
 	$FishLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -300)
+	
+	$KarmaLabel.text = "Karma: " + str(Globalvariables.karma)
+	$KarmaLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -200)
+	
 	$BG.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
 	$GiganticAssBlackScreen.global_position = $CatProtagonist/CatCamera.get_screen_center_position()
+	
 	
 	if Globalvariables.difficulty == "hell":
 		$GiganticAssBlackScreen.visible = true
