@@ -14,4 +14,4 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_difficulty_button_r_pressed() -> void:
-	
+	pass
