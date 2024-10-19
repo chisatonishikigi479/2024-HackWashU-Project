@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://3vqkr350j7e5"]
+[gd_scene load_steps=5 format=3 uid="uid://3vqkr350j7e5"]
 
 [ext_resource type="Script" path="res://MazeGenerationManager.gd" id="1_5lm7m"]
 [ext_resource type="PackedScene" uid="uid://i7dmty6sm44l" path="res://cat_protagonist.tscn" id="2_xcoxq"]
+[ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="3_fcx4y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bp60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fcx4y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MazeGenerationManager" type="Node2D"]
 script = ExtResource("1_5lm7m")
@@ -10,3 +22,12 @@ script = ExtResource("1_5lm7m")
 position = Vector2(76, 592)
 
 [node name="CatCamera" type="Camera2D" parent="CatProtagonist"]
+
+[node name="BG" type="Area2D" parent="."]
+z_index = -100
+position = Vector2(570, 346)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
+position = Vector2(2, 6)
+sprite_frames = SubResource("SpriteFrames_7bp60")
