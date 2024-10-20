@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="4_3khsq"]
 [ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="4_3mo82"]
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="5_msp0o"]
+[ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="6_22yga"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="6_widq5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_opoyj"]
@@ -33,7 +34,11 @@ animations = [{
 "texture": ExtResource("5_msp0o")
 }, {
 "duration": 1.0,
+<<<<<<< Updated upstream
 "texture": ExtResource("4_3mo82")
+=======
+"texture": ExtResource("6_22yga")
+>>>>>>> Stashed changes
 }],
 "loop": true,
 "name": &"default",
