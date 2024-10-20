@@ -41,7 +41,7 @@ func _process(delta):
 			closestmouse = mouse
 	
 	if closestmouse != null:
-		var angle = closestmouse.angle
+		var angle = position.angle_to(closestmouse.position)
 		position += enticingSpeed * delta * Vector2(cos(angle), sin(angle))
 		
 	
