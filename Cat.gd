@@ -42,7 +42,9 @@ func _process(delta):
 	
 	if closestmouse != null:
 		#this should work!
-		var angle = position.angle_to(closestmouse.position)
+		var difference = position - closestmouse.position
+		difference = difference.normalized()
+		var angle = PI + difference.angle()
 		position += enticingSpeed * delta * Vector2(cos(angle), sin(angle))
 		
 	
