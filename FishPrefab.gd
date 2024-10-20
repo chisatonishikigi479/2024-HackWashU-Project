@@ -3,7 +3,7 @@ extends Area2D
 
 signal collect
 var collectedTime = 0
-var collectedDelay = 1.6
+var collectedDelay = 1.0
 var collected = false
 
 var alreadyEmittedSignal = false
