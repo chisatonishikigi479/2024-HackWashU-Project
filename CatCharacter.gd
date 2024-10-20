@@ -62,9 +62,11 @@ func _physics_process(delta):
 			alreadySignalled = true
 		diedTime += delta
 		if diedTime >= diedTimeDelay:
+			get_tree().current_scene.visible = true
+			Globalvariables.inMinigame = false
 			queue_free()
 			get_parent().queue_free()
-			Globalvariables.inMinigame = false
+
 
 
 		

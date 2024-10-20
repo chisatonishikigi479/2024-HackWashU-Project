@@ -32,7 +32,7 @@ func _on_body_entered(body):
 					var hawk = hawkscene.instantiate()
 					get_parent().get_parent().add_child(hawk)
 					hawk.position.x = catprotagonist.position.x + 1000
-					hawk.z_index = 255
+					hawk.z_index = 400
 					print("contacted at " + str(catprotagonist.position.x))
 					hawk.position.y = ylevel
 					hawk.set_visible(true)

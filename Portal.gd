@@ -22,8 +22,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	if minigamescreen != null:
-		minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-640, -360)
-	
+		#get_parent().visible = false
+		if minigame == 0 or minigame == 1:
+			minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-640, -360)
+		elif minigame == 2:
+			minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position()
+	else:
+		#get_parent().visible = true
+		pass
+		
 	if not entered:
 		$AnimatedSprite2D.play("default")
 	else:
@@ -42,6 +49,7 @@ func _process(delta):
 			elif minigame == 2: #parkour minigame
 				minigamescreen = parkourminigamescene.instantiate()
 				
+
 			Globalvariables.isLoading = false
 			get_parent().add_child(minigamescreen)
 			minigamescreen.z_index = 4050

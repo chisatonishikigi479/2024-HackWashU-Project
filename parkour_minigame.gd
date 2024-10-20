@@ -34,7 +34,7 @@ func _ready():
 		preset.position = Vector2(width, height)
 		print("spawned at " + str(preset.position))
 		width += preset.width
-		preset.z_index = 250
+		preset.z_index = 400
 		if (index == 2):
 			print("this is the case")
 			if randi() % 2 == 0:
@@ -71,6 +71,7 @@ func _process(delta):
 			alreadyIncrementedKarma = true
 		completedTime += delta
 		if completedTime >= completedTimeDelay:
+			get_tree().current_scene.visible = true
 			Globalvariables.inMinigame = false
 			queue_free()
 		pass

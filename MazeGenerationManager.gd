@@ -96,7 +96,6 @@ func generate_walls(maze):
 			walls.append(wall)
 			wall.add_to_group("walls")
 			add_child(wall)
-			wall.rotation_degrees = 90
 			wall.global_position = Vector2(min(edge.vertex1.coords.x, edge.vertex2.coords.x)*wallunit + (wallunit / 2) - offsetX, edge.vertex1.coords.y * wallunit - (wallunit / 2) + offsetY)
 			print("generated wall at " + str(wall.global_position))
 			wall.set_visible(true)
@@ -107,6 +106,7 @@ func generate_walls(maze):
 			
 			var wall = mazewall.instantiate()
 			walls.append(wall)
+			wall.rotation_degrees = 90
 			wall.add_to_group("walls")
 			add_child(wall)
 			wall.global_position = Vector2(edge.vertex1.coords.x * wallunit - offsetX, min(edge.vertex1.coords.y, edge.vertex2.coords.y)*wallunit + offsetY)
