@@ -229,6 +229,8 @@ func generate_walls(maze):
 	$CatProtagonist/CatCamera.limit_top = upborder
 	$CatProtagonist/CatCamera.limit_bottom = downborder
 	
+	#blah blah blah
+	
 	for coord in fish_coords:	
 		var fish = fishscene.instantiate()
 		fisharray.append(fish)
