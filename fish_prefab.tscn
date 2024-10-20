@@ -1,7 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://n3snncraoprj"]
+[gd_scene load_steps=16 format=3 uid="uid://n3snncraoprj"]
 
 [ext_resource type="Script" path="res://FishPrefab.gd" id="1_wdlxt"]
+[ext_resource type="Texture2D" uid="uid://bya3ps3yjy5m7" path="res://Finished Images/fish-collect.png" id="2_386nq"]
 [ext_resource type="Texture2D" uid="uid://dscro307q5krl" path="res://Finished Images/fish.png" id="2_ojt8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8anfv"]
+atlas = ExtResource("2_386nq")
+region = Rect2(900, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj4f3"]
+atlas = ExtResource("2_386nq")
+region = Rect2(1200, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jocxo"]
+atlas = ExtResource("2_386nq")
+region = Rect2(1500, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtadb"]
+atlas = ExtResource("2_386nq")
+region = Rect2(1800, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpmo6"]
+atlas = ExtResource("2_386nq")
+region = Rect2(2100, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ot0"]
+atlas = ExtResource("2_386nq")
+region = Rect2(2400, 0, 300, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mehvx"]
+atlas = ExtResource("2_386nq")
+region = Rect2(2700, 0, 300, 175)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eef0h"]
 atlas = ExtResource("2_ojt8y")
@@ -17,6 +46,35 @@ region = Rect2(0, 0, 300, 109)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vlva"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8anfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj4f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jocxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtadb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpmo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3ot0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mehvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mehvx")
+}],
+"loop": true,
+"name": &"collect",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eef0h")
@@ -46,6 +104,7 @@ metadata/_edit_group_ = true
 position = Vector2(25, 0)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_7vlva")
+animation = &"collect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
