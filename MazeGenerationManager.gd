@@ -33,6 +33,7 @@ var karma = 0
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer.play()
 	if Globalvariables.difficulty == "Easy":
 		dim = EASY_DIM
 	if Globalvariables.difficulty == "Medium":
