@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clsgvj2mohjt4"]
+[gd_scene load_steps=11 format=3 uid="uid://dfw57ktt34u58"]
 
 [ext_resource type="Script" path="res://mouse_minigame.gd" id="1_bva7x"]
 [ext_resource type="Script" path="res://Cat.gd" id="2_hvomw"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="3_fmnhv"]
 [ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="4_3mo82"]
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="5_msp0o"]
+[ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="6_22yga"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="6_widq5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_opoyj"]
@@ -18,6 +19,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_msp0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_22yga")
 }],
 "loop": true,
 "name": &"default",
