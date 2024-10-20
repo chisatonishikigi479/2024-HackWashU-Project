@@ -63,7 +63,9 @@ func _process(delta):
 		$AnimatedSprite2D.play("default")
 		isMovingRight = false
 	else:
+		$AnimatedSprite2D.frame = 1
 		$AnimatedSprite2D.stop()
+		
 		
 	$AnimatedSprite2D.flip_h = not isMovingRight
 	
