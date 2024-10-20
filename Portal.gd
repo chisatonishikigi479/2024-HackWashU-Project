@@ -2,7 +2,7 @@ extends Area2D
 
 
 var enteredTime = 0
-var enteredDelay = 3.0
+var enteredDelay = 1.0
 var entered = false
 
 var minigame = 0
