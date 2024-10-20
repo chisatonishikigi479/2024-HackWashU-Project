@@ -34,7 +34,15 @@ var setOfCoords
 
 var exitLocation: Vector2
 var exitEdge
+var minigameindices: Array
 
+func _on_portal_opened(index):
+	var ind = minigameindices.find(index)
+	minigameindices.erase(index)
+	if ind != 1:
+		var ele = setOfCoords[ind]
+		setOfCoords.erase(ele)
+	pass
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -142,8 +150,7 @@ func generate_walls_2(maze):
 		
 	setOfCoords = Globalvariables.setOfCoords
 	
-	var minigameindices = [0, 1]
-	minigameindices.shuffle()
+	minigameindices = Globalvariables.minigameindices
 	
 	for i in range (minigameindices.size()):
 		var targetMinigame = minigameindices[i]
@@ -213,7 +220,7 @@ func generate_walls(maze):
 		fish.set_visible(true)
 			
 			
-	var minigameindices = [0, 1, 2]
+	minigameindices = [0, 1, 2]
 	minigameindices.shuffle()
 	
 	setOfCoords = []
@@ -232,6 +239,7 @@ func generate_walls(maze):
 		portalarray.append(portal)
 		portal.add_to_group("portals")
 		add_child(portal)
+		portal.opened.connect(self._on_portal_opened)
 		portal.z_index = 200
 		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
 		
