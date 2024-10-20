@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g2yvh1h15ju1"]
+[gd_scene load_steps=10 format=3 uid="uid://g2yvh1h15ju1"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_b8huk"]
 [ext_resource type="Texture2D" uid="uid://dy871bvw5q2e7" path="res://title_screen_bg.png" id="2_6oun6"]
@@ -8,6 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://delyia7n670w7" path="res://Finished Images/arrow-r.png" id="5_m6v1f"]
 [ext_resource type="AudioStream" uid="uid://jbexia5r2nw5" path="res://Audio/click.wav" id="8_3eqxl"]
 [ext_resource type="AudioStream" uid="uid://bmacnq5f4thvp" path="res://Fire.wav" id="8_wp6d6"]
+
+[sub_resource type="FontFile" id="FontFile_qtqeb"]
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -45,6 +57,7 @@ layout_mode = 2
 
 [node name="DifficultyLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_qtqeb")
 theme_override_font_sizes/font_size = 40
 text = "Difficulty: Easy"
 vertical_alignment = 1

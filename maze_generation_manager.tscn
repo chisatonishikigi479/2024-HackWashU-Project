@@ -43,6 +43,7 @@ position = Vector2(2, 6)
 sprite_frames = SubResource("SpriteFrames_7bp60")
 
 [node name="FishLabel" type="RichTextLabel" parent="."]
+visible = false
 z_index = 500
 offset_right = 520.0
 offset_bottom = 87.0
@@ -55,6 +56,7 @@ text = "Fish Collected: 0"
 visible = false
 
 [node name="KarmaLabel" type="RichTextLabel" parent="."]
+visible = false
 z_index = 500
 offset_left = 6.0
 offset_top = 70.0
