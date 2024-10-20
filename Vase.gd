@@ -4,6 +4,7 @@ extends Node2D
 signal vase_broken
 var isBroken = false
 var succeeded = false
+var breakingAnimation = false
 var brokenTime = 0.0
 var brokenTimeDelay = 3.0
 var velocity = 0.0
@@ -26,8 +27,10 @@ func _ready():
 func _process(delta):
 	succeeded = get_parent().succeeded
 	if isBroken:
+		if !breakingAnimation:
+			$AnimatedSprite2D.play("break")
+		breakingAnimation = true
 		emit_signal("vase_broken")
-		$AnimatedSprite2D.play("break")
 		brokenTime += delta
 		if brokenTime >= brokenTimeDelay:
 			Globalvariables.inMinigame = false

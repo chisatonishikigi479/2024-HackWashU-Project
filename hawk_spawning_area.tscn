@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://56gfn3f57d6s"]
+
+[ext_resource type="Script" path="res://HawkSpawningArea.gd" id="1_ub3yc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdpom"]
+size = Vector2(45, 1496)
+
+[node name="HawkSpawningArea" type="Area2D"]
+position = Vector2(3475, 109)
+script = ExtResource("1_ub3yc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_gdpom")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
