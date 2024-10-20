@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://brr5lflygww62"]
+[gd_scene load_steps=14 format=3 uid="uid://brr5lflygww62"]
 
 [ext_resource type="Script" path="res://parkour_minigame.gd" id="1_8f5rf"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="1_hi5p2"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://CatCharacter.gd" id="3_1bjth"]
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="3_tyh5g"]
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="4_21ids"]
+[ext_resource type="PackedScene" uid="uid://7p3dwybsg58v" path="res://spike.tscn" id="8_eh8si"]
+[ext_resource type="PackedScene" uid="uid://c4fllmxujyehg" path="res://short platform.tscn" id="10_3gqq6"]
+[ext_resource type="PackedScene" uid="uid://djyb2h07fmwwv" path="res://long_platform.tscn" id="11_nubop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uls8k"]
 size = Vector2(1484, 176)
@@ -46,7 +49,7 @@ metadata/_edit_group_ = true
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_uls8k")
 
-[node name="CatCharacter" type="CharacterBody2D" parent="."]
+[node name="CatCharacter" type="CharacterBody2D" parent="." groups=["cat"]]
 position = Vector2(210, 664)
 script = ExtResource("3_1bjth")
 metadata/_edit_group_ = true
@@ -64,3 +67,32 @@ shape = SubResource("RectangleShape2D_m7q8r")
 offset = Vector2(300, 0)
 limit_left = -300
 limit_bottom = 720
+
+[node name="Spike" parent="." instance=ExtResource("8_eh8si")]
+position = Vector2(585, 674)
+
+[node name="Spike2" parent="." instance=ExtResource("8_eh8si")]
+position = Vector2(1079, 672)
+
+[node name="Platform" parent="." instance=ExtResource("10_3gqq6")]
+position = Vector2(686, 683)
+
+[node name="LongPlatform" parent="." instance=ExtResource("11_nubop")]
+position = Vector2(1224, 664)
+
+[node name="Spike3" parent="." instance=ExtResource("8_eh8si")]
+position = Vector2(1845, 674)
+
+[node name="Spike4" parent="." instance=ExtResource("8_eh8si")]
+position = Vector2(1921, 674)
+
+[node name="LongPlatform2" parent="." instance=ExtResource("11_nubop")]
+position = Vector2(2473, 674)
+
+[node name="ResultsLabel" type="RichTextLabel" parent="."]
+offset_left = 823.0
+offset_right = 1255.0
+offset_bottom = 109.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Failed! Karma -5"
