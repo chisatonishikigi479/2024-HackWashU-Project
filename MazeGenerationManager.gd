@@ -70,6 +70,7 @@ func _ready():
 		$CatProtagonist.global_position = Globalvariables.characterPos
 		fish_coords = Globalvariables.fishCoords
 		fishkarma = Globalvariables.fishkarma
+		karma = Globalvariables.karma
 		generate_walls_2(maze)
 	#when the player dies, regenerate the maze from the player node (call reset_variables from there)
 	pass # Replace with function body.
