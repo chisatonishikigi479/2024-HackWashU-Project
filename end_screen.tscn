@@ -163,7 +163,7 @@ text = "Total karma: -1 (negative). You are sent to hell."
 
 [node name="BribeButton" type="Area2D" parent="."]
 visible = false
-position = Vector2(992, 344)
+position = Vector2(930, 344)
 script = ExtResource("7_apd6t")
 metadata/_edit_group_ = true
 
