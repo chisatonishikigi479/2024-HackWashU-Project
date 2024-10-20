@@ -5,7 +5,9 @@ var moveSpeed = 300
 signal ateMouse
 var detectionRange = 500
 var enticingSpeed = 225
+var radius = 300
 var isMovingRight = true
+var screen_center = Vector2(640, 360)
 var lastPos: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,6 +47,9 @@ func _process(delta):
 	
 	
 
+	#position.x = clamp(position.x, screen_center.x - sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))),  screen_center.x + sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))))
+	#position.y = clamp(position.y, screen_center.y - radius, screen_center.y + radius)
+	
 	position.x = clamp(position.x, 0, 1280)
 	position.y = clamp(position.y, 0, 720)
 	

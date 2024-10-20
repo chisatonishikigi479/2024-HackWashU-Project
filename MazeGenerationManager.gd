@@ -19,6 +19,10 @@ var portalscene = preload("res://portal.tscn")
 var portalarray = []
 var xdim
 var ydim
+var lefborder
+var rightborder
+var upborder
+var downborder
 
 var fishkarma = 0
 var isBuffered = false
@@ -85,7 +89,7 @@ func generate_walls(maze):
 	portalarray = []
 	
 	for edge in maze:
-		#case 1: horizontal edge
+		#case 1: horizontal edge (will have to rotate the sprite by 90 degrees)
 		if edge.vertex1.coords.y == edge.vertex2.coords.y:
 			var wall = mazewall.instantiate()
 			walls.append(wall)
@@ -97,7 +101,7 @@ func generate_walls(maze):
 			wall.set_visible(true)
 			pass
 			
-		#case 2: vertical edge (will have to rotate the sprite by 90 degrees)
+		#case 2: vertical edge
 		elif edge.vertex1.coords.x == edge.vertex2.coords.x:
 			
 			var wall = mazewall.instantiate()

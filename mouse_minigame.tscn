@@ -90,5 +90,15 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
 sprite_frames = SubResource("SpriteFrames_wjke8")
 
+[node name="HintLabel" type="RichTextLabel" parent="."]
+z_index = 10
+offset_left = 345.0
+offset_top = 630.0
+offset_right = 972.0
+offset_bottom = 761.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Avoid killing the mice!"
+
 [connection signal="area_entered" from="Cat" to="Cat" method="_on_area_entered"]
 [connection signal="ateMouse" from="Cat" to="." method="_on_cat_ate_mouse"]
