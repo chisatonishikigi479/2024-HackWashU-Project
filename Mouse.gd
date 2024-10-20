@@ -44,7 +44,7 @@ func _process(delta):
 			
 		
 	else:
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("skin" + skinType)
 		if goingToTarget:
 			if cos(angle) <= 0: #makes the mouse turn the correct way
 				$AnimatedSprite2D.flip_h = true
