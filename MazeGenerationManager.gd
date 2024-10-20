@@ -32,6 +32,9 @@ var karma = 0
 
 var setOfCoords
 
+var exitLocation: Vector2
+var exitEdge
+
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -150,7 +153,14 @@ func generate_walls_2(maze):
 		add_child(portal)
 		portal.z_index = 200
 		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
-		
+	
+	exitLocation = Vector2((xdim-1) * wallunit + (wallunit / 2), (ydim-1) * wallunit + (wallunit / 2) + offsetY)
+	$ExitTrigger.global_position = exitLocation
+	
+	
+	print("exit location: " + str($ExitTrigger.global_position))
+	
+	
 	
 
 func generate_walls(maze):
@@ -229,10 +239,14 @@ func generate_walls(maze):
 		portal.z_index = 200
 		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
 		
+	exitLocation = Vector2((xdim-1) * wallunit + (wallunit / 2), (ydim-1) * wallunit + (wallunit / 2) + offsetY)
+	$ExitTrigger.global_position = exitLocation
+	print("exit location: " + str($ExitTrigger.global_position))
 	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print("curr loc: " + str($CatProtagonist.global_position))
 	Globalvariables.fishkarma = fishkarma
 	$FishLabel.text = "Fish Collected: " + str(fishkarma)
 	$FishLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -300)
@@ -361,6 +375,8 @@ func generate_maze (m, n):
 		if not intersects_inner:
 			if not ((outeredge.vertex1.coords.x == xdim and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim-1 and outeredge.vertex2.coords.y == ydim) or (outeredge.vertex1.coords.x == xdim-1 and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim and outeredge.vertex2.coords.y == ydim)):
 				mazeedges.append(outeredge)
+			else:
+				exitEdge = outeredge
 	
 	
 	return mazeedges
