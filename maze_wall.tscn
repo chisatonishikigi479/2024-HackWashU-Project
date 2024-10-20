@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibevc"]
-size = Vector2(19, 163)
+size = Vector2(39.9993, 200)
 
 [node name="MazeWall" type="StaticBody2D"]
 position = Vector2(0.001, 0)
@@ -27,6 +27,6 @@ rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_deapq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.00100095, -4.76837e-07)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ibevc")
