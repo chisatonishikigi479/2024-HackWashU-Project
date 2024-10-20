@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjoi2ftmro4ci"
-path="res://.godot/imported/cat_protagonist-idle.png-e887279cb0fd50fcb400d94cd8896d98.ctex"
+uid="uid://dscro307q5krl"
+path="res://.godot/imported/fish.png-1ef208b5bb0cd99e26a4cd9fdbd93a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Finished Images/cat_protagonist-idle.png"
-dest_files=["res://.godot/imported/cat_protagonist-idle.png-e887279cb0fd50fcb400d94cd8896d98.ctex"]
+source_file="res://Finished Images/fish.png"
+dest_files=["res://.godot/imported/fish.png-1ef208b5bb0cd99e26a4cd9fdbd93a69.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 
 var elapsed_time = 0.0
-var goal_time = 30.0
+var goal_time = 15.0
 var failed = false
 
 var succeeded = false

@@ -65,6 +65,7 @@ shape = SubResource("RectangleShape2D_mdasc")
 
 [node name="Vase" type="Area2D" parent="." groups=["vase"]]
 position = Vector2(375, 132)
+rotation = -0.0174533
 script = ExtResource("3_b573w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vase"]
