@@ -240,8 +240,6 @@ func generate_walls(maze):
 		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
 		
 	exitLocation = Vector2((xdim-1) * wallunit + (wallunit / 2), (ydim-1) * wallunit + (wallunit / 2) + offsetY)
-	$ExitTrigger.global_position = exitLocation
-	print("exit location: " + str($ExitTrigger.global_position))
 	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.

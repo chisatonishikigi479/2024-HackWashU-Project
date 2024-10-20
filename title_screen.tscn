@@ -54,9 +54,9 @@ script = ExtResource("4_f02rt")
 [node name="DifficultyButtonR" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 989.0
-offset_top = 409.0
+offset_top = 418.0
 offset_right = 1149.0
-offset_bottom = 569.0
+offset_bottom = 578.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_s3yda")
 script = ExtResource("4_xi7pi")
