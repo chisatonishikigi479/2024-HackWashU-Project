@@ -3,7 +3,7 @@ extends Area2D
 
 var moveSpeed = 300
 signal ateMouse
-var detectionRange = 500
+var detectionRange = 600
 var enticingSpeed = 225
 var radius = 300
 var isMovingRight = true
@@ -50,11 +50,11 @@ func _process(delta):
 	
 	
 
-	#position.x = clamp(position.x, screen_center.x - sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))),  screen_center.x + sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))))
-	#position.y = clamp(position.y, screen_center.y - radius, screen_center.y + radius)
+	position.x = clamp(position.x, screen_center.x - sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))),  screen_center.x + sqrt(max(0, radius*radius - (screen_center.y - position.y)*(screen_center.y - position.y))))
+	position.y = clamp(position.y, screen_center.y - radius, screen_center.y + radius)
 	
-	position.x = clamp(position.x, 0, 1280)
-	position.y = clamp(position.y, 0, 720)
+	#position.x = clamp(position.x, 0, 1280)
+	#position.y = clamp(position.y, 0, 720)
 	
 	if position.x - lastPos.x > 0:
 		$AnimatedSprite2D.play("default")
