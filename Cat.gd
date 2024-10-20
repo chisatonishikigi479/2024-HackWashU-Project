@@ -3,7 +3,7 @@ extends Area2D
 
 var moveSpeed = 300
 signal ateMouse
-var detectionRange = 500
+var detectionRange = 600
 var enticingSpeed = 225
 var radius = 300
 var isMovingRight = true
