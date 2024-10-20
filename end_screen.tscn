@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dpisp77jdq12k"]
+[gd_scene load_steps=22 format=3 uid="uid://dpisp77jdq12k"]
 
 [ext_resource type="Script" path="res://Retry.gd" id="1_8r4xr"]
 [ext_resource type="Script" path="res://end_screen.gd" id="1_npkjd"]
@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://j6q2uiib2bmt" path="res://Finished Images/heaven-bg.png" id="6_4nr0l"]
 [ext_resource type="Texture2D" uid="uid://bwvhbyff6drq5" path="res://catgodhappy.png" id="6_qtkey"]
 [ext_resource type="Script" path="res://BribeButton.gd" id="7_apd6t"]
+[ext_resource type="Texture2D" uid="uid://c2wfpcrnpa3kw" path="res://Finished Images/hell-bg.png" id="7_c12nw"]
 [ext_resource type="Texture2D" uid="uid://c1v5cj4csml4l" path="res://bribebutton.png" id="7_ogg7p"]
 [ext_resource type="AudioStream" uid="uid://dd2vi638miqty" path="res://heaven-bgm.mp3" id="12_goc5m"]
+[ext_resource type="AudioStream" uid="uid://dgjq7opiw3rti" path="res://hell-bgm.mp3" id="13_lvrhv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpea4"]
 animations = [{
@@ -45,7 +47,15 @@ animations = [{
 "texture": ExtResource("6_4nr0l")
 }],
 "loop": true,
-"name": &"default",
+"name": &"heaven",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_c12nw")
+}],
+"loop": true,
+"name": &"hell",
 "speed": 5.0
 }]
 
@@ -119,6 +129,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
 sprite_frames = SubResource("SpriteFrames_h7qgx")
+animation = &"hell"
 
 [node name="CatGod" type="Area2D" parent="."]
 position = Vector2(268, 226)
@@ -164,6 +175,11 @@ text = "Bribe with collected fish (0)"
 
 [node name="HeavenMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_goc5m")
+volume_db = -5.0
+
+[node name="HellMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_lvrhv")
+volume_db = -5.0
 
 [connection signal="mouse_entered" from="Retry" to="Retry" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Retry" to="Retry" method="_on_mouse_exited"]
