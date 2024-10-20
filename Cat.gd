@@ -34,7 +34,7 @@ func _process(delta):
 	var closestdistance = 9999999
 	
 	for mouse in closerangemice:
-		if (mouse.position.distance_to(position) < closestdistance):
+		if (mouse.position.distance_to(position) < closestdistance and mouse.atTarget):
 			closestdistance = mouse.position.distance_to(position) 
 			closestmouse = mouse
 	
