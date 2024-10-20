@@ -4,6 +4,8 @@ extends CharacterBody2D
 const speed = 400
 
 var isMovingRight = true
+var idleTime = 0
+var stopWalkingTime = 0.3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -37,8 +39,12 @@ func _physics_process(delta):
 
 		if (velocity.length() > 0):
 			$AnimatedSprite2D.play("walk")
+			idleTime = 0
 		else:
-			$AnimatedSprite2D.stop()
+			idleTime += delta
+			if idleTime >  stopWalkingTime: #doesn't stop immediately
+				$AnimatedSprite2D.stop()
+				$AnimatedSprite2D.set_frame_and_progress(3,0)
 		
 		$AnimatedSprite2D.flip_h = !isMovingRight
 		

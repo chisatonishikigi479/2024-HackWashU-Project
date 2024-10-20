@@ -46,6 +46,7 @@ func _ready():
 		dim = EXTREME_DIM
 	xdim = dim
 	ydim = dim
+	$AudioStreamPlayer.play()
 	
 	if not Globalvariables.resume:
 		maze = generate_maze(xdim, ydim)
