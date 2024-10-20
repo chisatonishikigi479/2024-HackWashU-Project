@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfw57ktt34u58"]
+[gd_scene load_steps=11 format=3 uid="uid://e5jcp3l75oee"]
 
 [ext_resource type="Script" path="res://mouse_minigame.gd" id="1_bva7x"]
 [ext_resource type="Script" path="res://Cat.gd" id="2_hvomw"]
@@ -89,10 +89,10 @@ text = "Success! +10 Karma"
 [node name="BG" type="Area2D" parent="."]
 z_index = -10
 position = Vector2(648, 343)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
 sprite_frames = SubResource("SpriteFrames_wjke8")
+offset = Vector2(-10, 15)
 
 [node name="HintLabel" type="RichTextLabel" parent="."]
 z_index = 10
