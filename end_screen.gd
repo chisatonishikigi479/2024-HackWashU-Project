@@ -32,7 +32,8 @@ func _on_bribe_button_bribed():
 	if Globalvariables.karma >= 0:
 		$HellMusic.stop()
 		$HeavenMusic.play()
-		$BG/AnimatedSprite2D.play("angry")
+		$BG/AnimatedSprite2D.play("heaven")
+		$CatGod/AnimatedSprite2D.play("angry")
 		$FinalKarmaCount.text = "Total karma: " + str(Globalvariables.karma) + " (positive). You are sent to heaven, but only because you bribed me."
 	else:
 		$BG/AnimatedSprite2D.play("hell")
