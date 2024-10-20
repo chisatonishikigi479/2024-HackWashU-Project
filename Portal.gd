@@ -36,7 +36,6 @@ func _process(delta):
 	if not entered:
 		$AnimatedSprite2D.play("default")
 	else:
-		$AnimatedSprite2D.play("entered")
 		enteredTime += delta
 		if (enteredTime >= enteredDelay):
 			Globalvariables.isLoading = true

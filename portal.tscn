@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://w2j4tyghki3e"]
+[gd_scene load_steps=8 format=3 uid="uid://w2j4tyghki3e"]
 
 [ext_resource type="Script" path="res://Portal.gd" id="1_f2y0d"]
-[ext_resource type="Texture2D" uid="uid://djpbxa1222adk" path="res://portal.png" id="2_tuuk6"]
+[ext_resource type="Texture2D" uid="uid://rc18kmjm1nax" path="res://Finished Images/portal-0.png" id="2_jp7qo"]
+[ext_resource type="Texture2D" uid="uid://co6xwi6xwnk0v" path="res://Finished Images/portal-1.png" id="3_uyutn"]
+[ext_resource type="Texture2D" uid="uid://cbqk4886rxdr1" path="res://Finished Images/portal-2.png" id="4_6xbn7"]
+[ext_resource type="Texture2D" uid="uid://c3ntd1cwrx6x6" path="res://Finished Images/portal-3.png" id="5_d8iwq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g505u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tuuk6")
+"texture": ExtResource("2_jp7qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uyutn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6xbn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d8iwq")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +34,8 @@ script = ExtResource("1_f2y0d")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.999998, 3)
-scale = Vector2(0.7875, 0.85625)
+position = Vector2(4, 3)
+scale = Vector2(0.552, 0.6)
 sprite_frames = SubResource("SpriteFrames_g505u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
