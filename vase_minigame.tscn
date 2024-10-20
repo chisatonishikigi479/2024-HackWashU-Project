@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdasc"]
-size = Vector2(319.167, 313.333)
+size = Vector2(319.167, 378.333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bf2b5"]
 atlas = ExtResource("4_klvc3")
@@ -96,30 +96,33 @@ animations = [{
 script = ExtResource("1_ykelr")
 
 [node name="Bookshelf" type="Area2D" parent="."]
-position = Vector2(565, 478)
+position = Vector2(553, 556)
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf"]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_cnxa3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf"]
-position = Vector2(2.91669, 3.05176e-05)
+position = Vector2(2.91669, -32.5)
 shape = SubResource("RectangleShape2D_mdasc")
 
 [node name="Vase" type="Area2D" parent="." groups=["vase"]]
-position = Vector2(375, 132)
+position = Vector2(383, 291)
 rotation = -0.0174533
+scale = Vector2(0.8, 0.8)
 script = ExtResource("3_b573w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vase"]
-position = Vector2(2, 193)
+position = Vector2(1.75812, 243.068)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_b6ge6")
 animation = &"break"
 offset = Vector2(0, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vase"]
-position = Vector2(-0.5, -2.5)
+position = Vector2(-1.15468, -163.045)
 shape = SubResource("RectangleShape2D_6360d")
 
 [node name="Ground" type="Area2D" parent="." groups=["ground"]]
