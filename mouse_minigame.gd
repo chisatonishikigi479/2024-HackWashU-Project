@@ -22,6 +22,7 @@ func _ready():
 	pass # Replace with function body.
 
 func spawn_mice(numMice):
+	$Cat.position = Vector2(640, 360) 
 	numRoundsSurvived += 1
 	currMice = []
 	var indexArrayShuffled = indexArray.duplicate()
