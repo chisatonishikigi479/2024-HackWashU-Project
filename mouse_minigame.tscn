@@ -55,7 +55,7 @@ scale = Vector2(0.917, 1)
 sprite_frames = SubResource("SpriteFrames_opoyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
-position = Vector2(7, 11)
+position = Vector2(2.5, -0.5)
 shape = SubResource("RectangleShape2D_a2mvr")
 
 [node name="RoundLabel" type="RichTextLabel" parent="."]
