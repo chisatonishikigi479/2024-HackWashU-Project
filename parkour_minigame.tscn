@@ -96,7 +96,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Progress: 0%"
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -10
+z_index = -5
 position = Vector2(633, 331)
 metadata/_edit_group_ = true
 
