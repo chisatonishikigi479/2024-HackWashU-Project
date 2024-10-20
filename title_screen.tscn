@@ -4,22 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dy871bvw5q2e7" path="res://title_screen_bg.png" id="2_6oun6"]
 [ext_resource type="Script" path="res://start_button.gd" id="2_tpggw"]
 [ext_resource type="Script" path="res://difficulty_label.gd" id="4_f02rt"]
+[ext_resource type="FontFile" uid="uid://ctji7yn0p70h8" path="res://font/Jersey10Charted-Regular.ttf" id="4_jn02p"]
 [ext_resource type="Script" path="res://difficulty_button_r.gd" id="4_xi7pi"]
 [ext_resource type="Texture2D" uid="uid://delyia7n670w7" path="res://Finished Images/arrow-r.png" id="5_m6v1f"]
 [ext_resource type="AudioStream" uid="uid://jbexia5r2nw5" path="res://Audio/click.wav" id="8_3eqxl"]
 [ext_resource type="AudioStream" uid="uid://bmacnq5f4thvp" path="res://Fire.wav" id="8_wp6d6"]
-
-[sub_resource type="FontFile" id="FontFile_qtqeb"]
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -41,6 +30,7 @@ offset_top = 318.0
 offset_right = 447.0
 offset_bottom = 463.0
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_jn02p")
 theme_override_font_sizes/font_size = 100
 text = "Start"
 script = ExtResource("2_tpggw")
@@ -57,8 +47,8 @@ layout_mode = 2
 
 [node name="DifficultyLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_qtqeb")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("4_jn02p")
+theme_override_font_sizes/font_size = 80
 text = "Difficulty: Easy"
 vertical_alignment = 1
 script = ExtResource("4_f02rt")
