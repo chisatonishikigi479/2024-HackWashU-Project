@@ -7,6 +7,8 @@ func _ready():
 	$BribeButton.visible = Globalvariables.fishkarma > 0
 	$CatGod.isHappy = Globalvariables.karma >= 0
 	if Globalvariables.karma >= 0:
+		$BribeButton/AnimatedSprite2D.hide()
+		$BribeButton/FishLabel.hide()
 		$BG/AnimatedSprite2D.play("heaven")
 		$CatGod/AnimatedSprite2D.play("happy")
 		$HeavenMusic.play()
