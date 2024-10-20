@@ -1,16 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://dpisp77jdq12k"]
+[gd_scene load_steps=20 format=3 uid="uid://dpisp77jdq12k"]
 
 [ext_resource type="Script" path="res://Retry.gd" id="1_8r4xr"]
 [ext_resource type="Script" path="res://end_screen.gd" id="1_npkjd"]
 [ext_resource type="Texture2D" uid="uid://dgur70by7fq0d" path="res://retrybutton.png" id="1_xp2y5"]
 [ext_resource type="Texture2D" uid="uid://vpjn3257s1w7" path="res://mainmenu.png" id="3_u5qbi"]
-[ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="4_lcoyp"]
 [ext_resource type="Script" path="res://main_menu_button.gd" id="4_x1fs2"]
 [ext_resource type="Texture2D" uid="uid://5ck2k8ni6g8w" path="res://catgodangry.png" id="5_lgw0n"]
 [ext_resource type="Script" path="res://CatGod.gd" id="6_0jj0q"]
+[ext_resource type="Texture2D" uid="uid://j6q2uiib2bmt" path="res://Finished Images/heaven-bg.png" id="6_4nr0l"]
 [ext_resource type="Texture2D" uid="uid://bwvhbyff6drq5" path="res://catgodhappy.png" id="6_qtkey"]
 [ext_resource type="Script" path="res://BribeButton.gd" id="7_apd6t"]
 [ext_resource type="Texture2D" uid="uid://c1v5cj4csml4l" path="res://bribebutton.png" id="7_ogg7p"]
+[ext_resource type="AudioStream" uid="uid://dd2vi638miqty" path="res://heaven-bgm.mp3" id="12_goc5m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpea4"]
 animations = [{
@@ -41,7 +42,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_lcoyp")
+"texture": ExtResource("6_4nr0l")
 }],
 "loop": true,
 "name": &"default",
@@ -160,6 +161,9 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Bribe with collected fish (0)"
+
+[node name="HeavenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_goc5m")
 
 [connection signal="mouse_entered" from="Retry" to="Retry" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Retry" to="Retry" method="_on_mouse_exited"]
