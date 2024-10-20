@@ -29,29 +29,23 @@ func _process(delta):
 		$AnimatedSprite2D.play("entered")
 		enteredTime += delta
 		if (enteredTime >= enteredDelay):
+			Globalvariables.isLoading = true
 			entered = false
 			Globalvariables.inMinigame = true
 			#TODO: instantiate minigame screen here depending on the value of minigame
 			#Remember to change that variable to false after minigame exited!
-			if minigame == 0:
+			if minigame == 0: #vase minigame
 				minigamescreen = vaseminigamescene.instantiate()
-				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 4050
-				minigamescreen.set_visible(true)
-			elif minigame == 1:
-				#change this later to minigame 1
+			elif minigame == 1: #mouse minigame
 				minigamescreen = mouseminigamescene.instantiate()
-				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 4050
-				minigamescreen.set_visible(true)
-				pass
 			elif minigame == 2:
 				#change this later to minigame 2
 				minigamescreen = vaseminigamescene.instantiate()
-				get_parent().add_child(minigamescreen)
-				minigamescreen.z_index = 4050
-				minigamescreen.set_visible(true)
-				pass
+				
+			Globalvariables.isLoading = false
+			get_parent().add_child(minigamescreen)
+			minigamescreen.z_index = 4050
+			minigamescreen.set_visible(true)
 			visible = false
 	pass
 

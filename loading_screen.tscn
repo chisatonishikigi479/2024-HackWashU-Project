@@ -4,3 +4,13 @@
 
 [node name="LoadingScreen" type="Node2D"]
 script = ExtResource("1_souy5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 205.0
+offset_top = 173.0
+offset_right = 1039.0
+offset_bottom = 557.0
+theme_override_font_sizes/font_size = 150
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
