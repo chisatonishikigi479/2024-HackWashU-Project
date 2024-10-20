@@ -6,7 +6,10 @@
 size = Vector2(45, 1496)
 
 [node name="HawkSpawningArea" type="Area2D"]
+z_index = -290
 position = Vector2(3475, 109)
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_ub3yc")
 metadata/_edit_group_ = true
 

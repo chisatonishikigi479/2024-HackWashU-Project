@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqua5wnmotjnw"]
+
+[ext_resource type="Script" path="res://preset_1.gd" id="1_0ceh3"]
+[ext_resource type="PackedScene" uid="uid://7p3dwybsg58v" path="res://spike.tscn" id="1_om8nm"]
+[ext_resource type="PackedScene" uid="uid://56gfn3f57d6s" path="res://hawk_spawning_area.tscn" id="2_mu6wc"]
+[ext_resource type="PackedScene" uid="uid://djyb2h07fmwwv" path="res://long_platform.tscn" id="3_8sh6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7hw2"]
+size = Vector2(1798, 895.75)
+
+[node name="Preset1" type="Node2D"]
+z_index = -290
+script = ExtResource("1_0ceh3")
+
+[node name="Spike" parent="." instance=ExtResource("1_om8nm")]
+position = Vector2(476, 668)
+
+[node name="Spike2" parent="." instance=ExtResource("1_om8nm")]
+position = Vector2(941, 665)
+
+[node name="HawkSpawningArea" parent="." instance=ExtResource("2_mu6wc")]
+position = Vector2(1317, 273)
+
+[node name="FullArea" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FullArea"]
+position = Vector2(900, 291.875)
+shape = SubResource("RectangleShape2D_o7hw2")
+metadata/_edit_group_ = true
+
+[node name="LongPlatform3" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(121, 750)
+
+[node name="LongPlatform4" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(327, 750)
+
+[node name="LongPlatform5" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(531, 750)
+
+[node name="LongPlatform6" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(737, 750)
+
+[node name="LongPlatform7" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(941, 750)
+
+[node name="LongPlatform8" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(1142, 750)
+
+[node name="LongPlatform9" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(1348, 750)
+
+[node name="Spike3" parent="." instance=ExtResource("1_om8nm")]
+position = Vector2(1022, 666)
+
+[node name="LongPlatform10" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(1552, 750)
+
+[node name="LongPlatform11" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(1755, 750)
+
+[node name="LongPlatform12" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(73, 896)
+rotation = 1.5708
+
+[node name="LongPlatform13" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(121, 750)
+
+[node name="LongPlatform14" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(73, 1098)
+rotation = 1.5708
+
+[node name="LongPlatform15" parent="." instance=ExtResource("3_8sh6b")]
+position = Vector2(73, 1296)
+rotation = 1.5708

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c688h2dhmis7p"]
+[gd_scene load_steps=3 format=3 uid="uid://c4bc32xlml3c1"]
 
-[ext_resource type="PackedScene" uid="uid://c3ivdwdjvlnan" path="res://Player.tscn" id="1_utj74"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="1_utj74"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="2_eeklc"]
 
 [node name="level" type="Node2D"]

@@ -18,6 +18,8 @@ animations = [{
 size = Vector2(31, 74)
 
 [node name="Spike" type="Area2D" groups=["spikes"]]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_cqkgd")
 metadata/_edit_group_ = true
 

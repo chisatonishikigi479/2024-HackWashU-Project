@@ -1,17 +1,7 @@
-extends Node
-var difficulty = "Easy"
-var karma = 0
-var inMinigame = false
-var isLoading = false
+extends Node2D
 
-var fishCoords
-var maze
-var portalCoords
-var characterPos
-var setOfCoords
-
-var resume = false
-
+var width = 2550
+#var width = $FullArea/CollisionShape2D.shape.size.x
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
