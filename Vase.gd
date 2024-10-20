@@ -28,7 +28,7 @@ func _process(delta):
 	succeeded = get_parent().succeeded
 	if isBroken:
 		if !breakingAnimation:
-			$AudioStreamPlayer.play()
+			#$AudioStreamPlayer.play()
 			$AnimatedSprite2D.play("break")
 		breakingAnimation = true
 		emit_signal("vase_broken")
