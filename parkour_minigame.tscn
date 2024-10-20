@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://brr5lflygww62"]
+[gd_scene load_steps=8 format=3 uid="uid://brr5lflygww62"]
 
 [ext_resource type="Script" path="res://parkour_minigame.gd" id="1_8f5rf"]
 [ext_resource type="Script" path="res://Ground.gd" id="2_qeo6r"]
 [ext_resource type="PackedScene" path="res://cat_character.tscn" id="3_3ksgm"]
+[ext_resource type="FontFile" uid="uid://ctji7yn0p70h8" path="res://font/Jersey10Charted-Regular.ttf" id="4_c75oh"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="8_8bhlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uls8k"]
@@ -44,6 +45,7 @@ offset_left = 792.0
 offset_right = 1255.0
 offset_bottom = 173.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_c75oh")
 theme_override_font_sizes/normal_font_size = 50
 text = "Failed! -5 Karma"
 
@@ -54,6 +56,7 @@ offset_top = 173.0
 offset_right = 1255.0
 offset_bottom = 282.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_c75oh")
 theme_override_font_sizes/normal_font_size = 50
 text = "Progress: 0%"
 

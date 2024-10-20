@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blbefrbanar0e"]
+[gd_scene load_steps=11 format=3 uid="uid://nav3qsoy66xg"]
 
 [ext_resource type="Script" path="res://CatCharacter.gd" id="1_2qdwr"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="2_u3ivy"]

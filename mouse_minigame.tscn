@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://e5jcp3l75oee"]
+[gd_scene load_steps=12 format=3 uid="uid://e5jcp3l75oee"]
 
 [ext_resource type="Script" path="res://mouse_minigame.gd" id="1_bva7x"]
 [ext_resource type="Script" path="res://Cat.gd" id="2_hvomw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="5_msp0o"]
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="6_22yga"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="6_widq5"]
+[ext_resource type="FontFile" uid="uid://ctji7yn0p70h8" path="res://font/Jersey10Charted-Regular.ttf" id="7_hmin7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_opoyj"]
 animations = [{
@@ -59,20 +60,22 @@ position = Vector2(7, 11)
 shape = SubResource("RectangleShape2D_a2mvr")
 
 [node name="RoundLabel" type="RichTextLabel" parent="."]
-offset_left = 811.0
-offset_top = 8.0
+offset_left = 975.0
+offset_top = 29.0
 offset_right = 1304.0
 offset_bottom = 134.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_hmin7")
 theme_override_font_sizes/normal_font_size = 60
 text = "Round 1 of 5"
 
 [node name="KarmaLabel" type="RichTextLabel" parent="."]
-offset_left = 822.0
-offset_top = 98.0
-offset_right = 1223.0
-offset_bottom = 209.0
+offset_left = 976.0
+offset_top = 100.0
+offset_right = 1232.0
+offset_bottom = 159.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_hmin7")
 theme_override_font_sizes/normal_font_size = 50
 text = "Karma Lost: 0"
 
@@ -83,6 +86,7 @@ offset_top = 169.0
 offset_right = 1245.0
 offset_bottom = 436.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_hmin7")
 theme_override_font_sizes/normal_font_size = 50
 text = "Success! +10 Karma"
 
@@ -96,11 +100,12 @@ offset = Vector2(-10, 15)
 
 [node name="HintLabel" type="RichTextLabel" parent="."]
 z_index = 10
-offset_left = 345.0
-offset_top = 630.0
-offset_right = 972.0
-offset_bottom = 761.0
+offset_left = 469.0
+offset_top = 621.0
+offset_right = 1096.0
+offset_bottom = 752.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_hmin7")
 theme_override_font_sizes/normal_font_size = 50
 text = "Avoid killing the mice!"
 
