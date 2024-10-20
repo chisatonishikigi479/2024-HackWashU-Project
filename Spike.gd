@@ -17,4 +17,3 @@ func _on_body_entered(body):
 		cat.isDead = true
 		
 	pass # Replace with function body.
-

@@ -1,16 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://drbx1k3n814mg"]
+[gd_scene load_steps=19 format=3 uid="uid://drbx1k3n814mg"]
 
 [ext_resource type="Script" path="res://vase_minigame.gd" id="1_ykelr"]
-[ext_resource type="Texture2D" uid="uid://cd6kodn88rc3w" path="res://Finished Images/bookshelf.png" id="2_asqa7"]
+[ext_resource type="Texture2D" uid="uid://b1fynu0dglwbt" path="res://book.png" id="2_qlnlb"]
 [ext_resource type="Script" path="res://Vase.gd" id="3_b573w"]
-[ext_resource type="Texture2D" uid="uid://c3gkxnatnnsgd" path="res://Finished Images/vase.png" id="4_hss0o"]
+[ext_resource type="Texture2D" uid="uid://c3gkxnatnnsgd" path="res://Finished Images/vase.png" id="4_klvc3"]
+[ext_resource type="AudioStream" uid="uid://8i3oyujkro8v" path="res://Audio/vase break.wav" id="5_2tyrp"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="5_chai6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cnxa3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_asqa7")
+"texture": ExtResource("2_qlnlb")
 }],
 "loop": true,
 "name": &"default",
@@ -18,57 +19,57 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdasc"]
-size = Vector2(319.167, 313.333)
+size = Vector2(319.167, 378.333)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmu7u"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf2b5"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(0, 0, 300, 188)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v03n1"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0jl3"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(300, 0, 300, 188)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbf74"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ai4"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(600, 0, 300, 188)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7v8s"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa37b"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(900, 0, 300, 188)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_emph3"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp11d"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(1200, 0, 300, 188)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbrpb"]
-atlas = ExtResource("4_hss0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb1jh"]
+atlas = ExtResource("4_klvc3")
 region = Rect2(0, 0, 300, 188)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b6ge6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qmu7u")
+"texture": SubResource("AtlasTexture_bf2b5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v03n1")
+"texture": SubResource("AtlasTexture_q0jl3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sbf74")
+"texture": SubResource("AtlasTexture_u4ai4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m7v8s")
+"texture": SubResource("AtlasTexture_oa37b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_emph3")
+"texture": SubResource("AtlasTexture_dp11d")
 }],
 "loop": false,
 "name": &"break",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gbrpb")
+"texture": SubResource("AtlasTexture_nb1jh")
 }],
 "loop": true,
 "name": &"default",
@@ -96,35 +97,38 @@ animations = [{
 script = ExtResource("1_ykelr")
 
 [node name="Bookshelf" type="Area2D" parent="."]
-position = Vector2(569, 504)
-scale = Vector2(1.4, 1.4)
+position = Vector2(553, 556)
+scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf"]
-position = Vector2(-30, 30)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_cnxa3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf"]
-position = Vector2(2.91669, 3.05176e-05)
+position = Vector2(2.91669, -32.5)
 shape = SubResource("RectangleShape2D_mdasc")
 
 [node name="Vase" type="Area2D" parent="." groups=["vase"]]
-position = Vector2(375, 294)
+position = Vector2(383, 291)
 rotation = -0.0174533
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_b573w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vase"]
-position = Vector2(-7.36796, -7.62978)
+position = Vector2(1.75812, 243.068)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_b6ge6")
 animation = &"break"
-offset = Vector2(0, -77)
+offset = Vector2(0, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vase"]
-position = Vector2(-4.57558, -167.605)
+position = Vector2(-1.15468, -163.045)
 shape = SubResource("RectangleShape2D_6360d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Vase"]
+stream = ExtResource("5_2tyrp")
+volume_db = -10.0
 
 [node name="Ground" type="Area2D" parent="." groups=["ground"]]
 position = Vector2(355, 727)

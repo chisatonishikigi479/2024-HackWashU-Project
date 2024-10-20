@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3vqkr350j7e5"]
+[gd_scene load_steps=9 format=3 uid="uid://3vqkr350j7e5"]
 
 [ext_resource type="Script" path="res://MazeGenerationManager.gd" id="1_5lm7m"]
 [ext_resource type="PackedScene" uid="uid://i7dmty6sm44l" path="res://cat_protagonist.tscn" id="2_xcoxq"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="3_fcx4y"]
 [ext_resource type="PackedScene" uid="uid://cgyor45ccq1cr" path="res://gigantic_ass_black_screen.tscn" id="4_e6cfg"]
+[ext_resource type="AudioStream" uid="uid://c6dmemnvdarkm" path="res://bgm.wav" id="5_tfb4c"]
+[ext_resource type="Script" path="res://exit_trigger.gd" id="6_y5l3c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7bp60"]
 animations = [{
@@ -16,7 +18,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr2cl"]
+size = Vector2(135, 28)
+
 [node name="MazeGenerationManager" type="Node2D"]
+z_index = -5
+z_as_relative = false
 script = ExtResource("1_5lm7m")
 
 [node name="CatProtagonist" parent="." groups=["protagonist"] instance=ExtResource("2_xcoxq")]
@@ -25,7 +32,7 @@ position = Vector2(76, 592)
 [node name="CatCamera" type="Camera2D" parent="CatProtagonist"]
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -100
+z_index = -4000
 position = Vector2(570, 346)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -54,3 +61,18 @@ offset_bottom = 157.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Overall Karma: 0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tfb4c")
+volume_db = -15.0
+
+[node name="ExitTrigger" type="Area2D" parent="."]
+position = Vector2(-2488, -986)
+script = ExtResource("6_y5l3c")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2(3.5, 4)
+shape = SubResource("RectangleShape2D_mr2cl")
+
+[connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]

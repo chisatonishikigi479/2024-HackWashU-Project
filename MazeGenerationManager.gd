@@ -30,9 +30,15 @@ var bufferTimeLimit = 2.0
 var bufferTime = 0.0
 var karma = 0
 
+var setOfCoords
+
+var exitLocation: Vector2
+var exitEdge
+
 #comment
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#$AudioStreamPlayer.play()
 	if Globalvariables.difficulty == "Easy":
 		dim = EASY_DIM
 	if Globalvariables.difficulty == "Medium":
@@ -43,21 +49,32 @@ func _ready():
 		dim = EXTREME_DIM
 	xdim = dim
 	ydim = dim
-	maze = generate_maze(xdim, ydim)
-	print("MAZE: ")
-	for edge in maze:
-		print(edge.string_ver())
-		
-	for i in range (xdim):
-		for j in range (ydim):
-			var randomVariable = randi() % 25
-			if (randomVariable == 0):
-				fish_coords.append(Vector2(i, j))
-				
+	$AudioStreamPlayer.play()
 	
-	generate_walls(maze)
+	if not Globalvariables.resume:
+		maze = generate_maze(xdim, ydim)
+		print("MAZE: ")
+		for edge in maze:
+			print(edge.string_ver())
+			
+		for i in range (xdim):
+			for j in range (ydim):
+				var randomVariable = randi() % 25
+				if (randomVariable == 0):
+					fish_coords.append(Vector2(i, j))
+					
+		
+		generate_walls(maze)
+	else:
+		maze = Globalvariables.maze
+		$CatProtagonist.global_position = Globalvariables.characterPos
+		fish_coords = Globalvariables.fishCoords
+		fishkarma = Globalvariables.fishkarma
+		karma = Globalvariables.karma
+		generate_walls_2(maze)
 	#when the player dies, regenerate the maze from the player node (call reset_variables from there)
 	pass # Replace with function body.
+
 
 func _on_fish_collected():
 	if not isBuffered:
@@ -70,7 +87,77 @@ func reset_variables():
 	
 	generate_walls(maze)
 	
+func generate_walls_2(maze):
+	for fish in fisharray:
+		fish.queue_free()
+	fisharray = []
 	
+	for wall in walls:
+		wall.queue_free()
+	walls = []
+	
+	for chest in chests:
+		chest.queue_free()
+	chests = []
+	
+	for portal in portalarray:
+		portal.queue_free()
+	portalarray = []
+	
+	for edge in maze:
+		#case 1: horizontal edge (will have to rotate the sprite by 90 degrees)
+		if edge.vertex1.coords.y == edge.vertex2.coords.y:
+			var wall = mazewall.instantiate()
+			walls.append(wall)
+			wall.add_to_group("walls")
+			add_child(wall)
+			wall.global_position = Vector2(min(edge.vertex1.coords.x, edge.vertex2.coords.x)*wallunit + (wallunit / 2) - offsetX, edge.vertex1.coords.y * wallunit - (wallunit / 2) + offsetY)
+			print("generated wall at " + str(wall.global_position))
+			wall.set_visible(true)
+			pass
+			
+		#case 2: vertical edge
+		elif edge.vertex1.coords.x == edge.vertex2.coords.x:
+			
+			var wall = mazewall.instantiate()
+			walls.append(wall)
+			wall.rotation_degrees = 90
+			wall.add_to_group("walls")
+			add_child(wall)
+			wall.global_position = Vector2(edge.vertex1.coords.x * wallunit - offsetX, min(edge.vertex1.coords.y, edge.vertex2.coords.y)*wallunit + offsetY)
+			print("generated wall at " + str(wall.global_position))
+			wall.set_visible(true)
+	
+			pass
+	
+	for coord in fish_coords:	
+		var fish = fishscene.instantiate()
+		fisharray.append(fish)
+		fish.add_to_group("fish")
+		add_child(fish)
+		fish.z_index = 200
+		fish.collect.connect(self._on_fish_collected)
+		fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
+		fish.set_visible(true)
+		
+	setOfCoords = Globalvariables.setOfCoords
+	
+	var minigameindices = [0, 1]
+	minigameindices.shuffle()
+	
+	for i in range (minigameindices.size()):
+		var targetMinigame = minigameindices[i]
+		var portal = portalscene.instantiate()
+		portal.minigame = targetMinigame
+		portalarray.append(portal)
+		portal.add_to_group("portals")
+		add_child(portal)
+		portal.z_index = 200
+		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
+	
+	
+	
+
 func generate_walls(maze):
 	for fish in fisharray:
 		fish.queue_free()
@@ -95,7 +182,6 @@ func generate_walls(maze):
 			walls.append(wall)
 			wall.add_to_group("walls")
 			add_child(wall)
-			wall.rotation_degrees = 90
 			wall.global_position = Vector2(min(edge.vertex1.coords.x, edge.vertex2.coords.x)*wallunit + (wallunit / 2) - offsetX, edge.vertex1.coords.y * wallunit - (wallunit / 2) + offsetY)
 			print("generated wall at " + str(wall.global_position))
 			wall.set_visible(true)
@@ -106,6 +192,7 @@ func generate_walls(maze):
 			
 			var wall = mazewall.instantiate()
 			walls.append(wall)
+			wall.rotation_degrees = 90
 			wall.add_to_group("walls")
 			add_child(wall)
 			wall.global_position = Vector2(edge.vertex1.coords.x * wallunit - offsetX, min(edge.vertex1.coords.y, edge.vertex2.coords.y)*wallunit + offsetY)
@@ -114,21 +201,21 @@ func generate_walls(maze):
 	
 			pass
 	
-		for coord in fish_coords:	
-			var fish = fishscene.instantiate()
-			fisharray.append(fish)
-			fish.add_to_group("fish")
-			add_child(fish)
-			fish.z_index = 200
-			fish.collect.connect(self._on_fish_collected)
-			fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
-			fish.set_visible(true)
+	for coord in fish_coords:	
+		var fish = fishscene.instantiate()
+		fisharray.append(fish)
+		fish.add_to_group("fish")
+		add_child(fish)
+		fish.z_index = 200
+		fish.collect.connect(self._on_fish_collected)
+		fish.global_position = Vector2(coord.x * wallunit + (wallunit / 2), coord.y * wallunit + offsetY)
+		fish.set_visible(true)
 			
 			
 	var minigameindices = [0, 1, 2]
 	minigameindices.shuffle()
 	
-	var setOfCoords = []
+	setOfCoords = []
 	for i in range (xdim):
 		for j in range (xdim):
 			setOfCoords.append(Vector2(i, j))	
@@ -139,16 +226,21 @@ func generate_walls(maze):
 		var targetMinigame = minigameindices[i]
 		var portal = portalscene.instantiate()
 		portal.minigame = targetMinigame
+		if targetMinigame == 2:
+			print("parkour game: " + str(setOfCoords[i]))
 		portalarray.append(portal)
 		portal.add_to_group("portals")
 		add_child(portal)
 		portal.z_index = 200
 		portal.global_position = Vector2(setOfCoords[i].x * wallunit + (wallunit / 2), setOfCoords[i].y * wallunit + offsetY)
 		
+	exitLocation = Vector2((xdim-1) * wallunit + (wallunit / 2), (ydim-1) * wallunit + (wallunit / 2) + offsetY)
 	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print("curr loc: " + str($CatProtagonist.global_position))
+	Globalvariables.fishkarma = fishkarma
 	$FishLabel.text = "Fish Collected: " + str(fishkarma)
 	$FishLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -300)
 	
@@ -276,6 +368,8 @@ func generate_maze (m, n):
 		if not intersects_inner:
 			if not ((outeredge.vertex1.coords.x == xdim and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim-1 and outeredge.vertex2.coords.y == ydim) or (outeredge.vertex1.coords.x == xdim-1 and outeredge.vertex1.coords.y == ydim and outeredge.vertex2.coords.x == xdim and outeredge.vertex2.coords.y == ydim)):
 				mazeedges.append(outeredge)
+			else:
+				exitEdge = outeredge
 	
 	
 	return mazeedges

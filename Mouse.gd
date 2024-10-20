@@ -2,7 +2,7 @@ extends Area2D
 
 signal died
 var deathTime = 0.0
-var deathDelay = 1.0
+var deathDelay = 0.5
 var isDead = false
 
 var angle = PI/3 #in radians
@@ -16,7 +16,7 @@ var timeElapsedToTarget = 0.0
 var goingToTarget = true
 var atTarget = false
 var timeElapsedAtTarget = 0.0
-var timeLimitAtTarget = 5.0
+var timeLimitAtTarget = 2.0
 var exitingTarget = false
 var timeElapsedExitingTarget = 0.0
 var timeLimitExitingTarget = 2.5
@@ -44,7 +44,7 @@ func _process(delta):
 			
 		
 	else:
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("skin" + skinType)
 		if goingToTarget:
 			if cos(angle) <= 0: #makes the mouse turn the correct way
 				$AnimatedSprite2D.flip_h = true

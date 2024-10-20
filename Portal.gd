@@ -12,6 +12,7 @@ var minigamescreen = null
 
 var vaseminigamescene = preload("res://vase_minigame.tscn")
 var mouseminigamescene = preload("res://mouse_minigame.tscn")
+var parkourminigamescene = preload("res://parkour_minigame.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,8 +22,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	if minigamescreen != null:
-		minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-640, -360)
-	
+		#get_parent().visible = false
+		if minigame == 0 or minigame == 1:
+			minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-640, -360)
+		elif minigame == 2:
+			minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position()
+	else:
+		#get_parent().visible = true
+		pass
+		
 	if not entered:
 		$AnimatedSprite2D.play("default")
 	else:
@@ -36,22 +44,34 @@ func _process(delta):
 			#Remember to change that variable to false after minigame exited!
 			if minigame == 0: #vase minigame
 				minigamescreen = vaseminigamescene.instantiate()
+				minigamescreen.z_index = 1000
+				Globalvariables.isLoading = false
+				get_parent().add_child(minigamescreen)
+				minigamescreen.set_visible(true)
+				visible = false
 			elif minigame == 1: #mouse minigame
 				minigamescreen = mouseminigamescene.instantiate()
-			elif minigame == 2:
-				#change this later to minigame 2
-				minigamescreen = vaseminigamescene.instantiate()
-				
-			Globalvariables.isLoading = false
-			get_parent().add_child(minigamescreen)
-			minigamescreen.z_index = 4050
-			minigamescreen.set_visible(true)
-			visible = false
+				minigamescreen.z_index = 1000
+				Globalvariables.isLoading = false
+				get_parent().add_child(minigamescreen)
+				minigamescreen.set_visible(true)
+				visible = false
+			elif minigame == 2: #parkour minigame
+				Globalvariables.maze = get_parent().maze
+				Globalvariables.resume = true
+				Globalvariables.fishkarma = get_parent().fishkarma
+				Globalvariables.fishCoords = get_parent().fish_coords
+				Globalvariables.characterPos = get_parent().get_node("CatProtagonist").global_position
+				Globalvariables.setOfCoords = get_parent().setOfCoords
+				get_tree().change_scene_to_file("res://parkour_minigame.tscn")
+						
+			
 	pass
 
 
 func _on_body_entered(body):
 	if body.is_in_group("protagonist") and visible:
+		Globalvariables.inMinigame=true
 		entered = true
 		if not alreadyEmittedSignal:
 			alreadyEmittedSignal = true

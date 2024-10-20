@@ -9,6 +9,7 @@ var radius = 300
 var isMovingRight = true
 var screen_center = Vector2(640, 360)
 var lastPos: Vector2
+var contactRange = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -43,10 +44,11 @@ func _process(delta):
 	if closestmouse != null:
 		#this should work!
 		var difference = position - closestmouse.position
-		difference = difference.normalized()
-		var angle = PI + difference.angle()
-		position += enticingSpeed * delta * Vector2(cos(angle), sin(angle))
+		var angle = PI + difference.normalized().angle()
 		
+		if difference.length() > contactRange: #stops cat from spazzing
+			position += enticingSpeed * delta * Vector2(cos(angle), sin(angle))
+				
 	
 	
 
