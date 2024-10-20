@@ -2,7 +2,7 @@ extends Area2D
 
 signal died
 var deathTime = 0.0
-var deathDelay = 1.0
+var deathDelay = 0.5
 var isDead = false
 
 var angle = PI/3 #in radians
