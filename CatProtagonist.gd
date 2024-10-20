@@ -56,3 +56,6 @@ func _physics_process(delta):
 		
 		self.velocity = velocity
 		move_and_slide()
+	else:
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.set_frame_and_progress(3,0)
