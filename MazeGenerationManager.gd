@@ -19,7 +19,7 @@ var portalscene = preload("res://portal.tscn")
 var portalarray = []
 var xdim
 var ydim
-var lefborder
+var leftborder
 var rightborder
 var upborder
 var downborder
@@ -137,6 +137,17 @@ func generate_walls_2(maze):
 			wall.set_visible(true)
 	
 			pass
+			
+	leftborder = -offsetX
+	rightborder = xdim*wallunit - offsetX
+	upborder = offsetY
+	downborder = ydim*wallunit + offsetY
+	$CatProtagonist/CatCamera.limit_left = leftborder
+	$CatProtagonist/CatCamera.limit_right = rightborder
+	$CatProtagonist/CatCamera.limit_top = upborder
+	$CatProtagonist/CatCamera.limit_bottom = downborder
+
+	
 	
 	for coord in fish_coords:	
 		var fish = fishscene.instantiate()
@@ -208,6 +219,15 @@ func generate_walls(maze):
 			wall.set_visible(true)
 	
 			pass
+			
+	leftborder = -offsetX
+	rightborder = xdim*wallunit - offsetX
+	upborder = -2*offsetY
+	downborder = ydim*wallunit - 2*offsetY
+	$CatProtagonist/CatCamera.limit_left = leftborder
+	$CatProtagonist/CatCamera.limit_right = rightborder
+	$CatProtagonist/CatCamera.limit_top = upborder
+	$CatProtagonist/CatCamera.limit_bottom = downborder
 	
 	for coord in fish_coords:	
 		var fish = fishscene.instantiate()
