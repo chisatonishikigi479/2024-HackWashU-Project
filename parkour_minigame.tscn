@@ -65,3 +65,5 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
 sprite_frames = SubResource("SpriteFrames_munna")
+
+[connection signal="died" from="CatCharacter" to="." method="_on_cat_character_died"]

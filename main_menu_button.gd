@@ -14,7 +14,7 @@ func _process(delta):
 			Globalvariables.resume = false
 			Globalvariables.fishkarma = 0
 			Globalvariables.karma = 0
-			get_tree().change_scene_to_file("res://maze_generation_manager.tscn")
+			get_tree().change_scene_to_file("res://title_screen.tscn")
 			
 	pass
 
