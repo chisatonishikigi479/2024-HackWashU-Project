@@ -1,17 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://83qf3hxao1sg"]
+[gd_scene load_steps=8 format=3 uid="uid://n3snncraoprj"]
 
 [ext_resource type="Script" path="res://FishPrefab.gd" id="1_wdlxt"]
-[ext_resource type="Texture2D" uid="uid://d0g7gkq3by62y" path="res://fish.png" id="2_h67it"]
+[ext_resource type="Texture2D" uid="uid://dscro307q5krl" path="res://Finished Images/fish.png" id="2_ojt8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eef0h"]
+atlas = ExtResource("2_ojt8y")
+region = Rect2(600, 0, 300, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbg15"]
+atlas = ExtResource("2_ojt8y")
+region = Rect2(300, 0, 300, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eegew"]
+atlas = ExtResource("2_ojt8y")
+region = Rect2(0, 0, 300, 109)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vlva"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_h67it")
+"texture": SubResource("AtlasTexture_eef0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbg15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eegew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbg15")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl68l"]
@@ -22,6 +43,8 @@ script = ExtResource("1_wdlxt")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(25, 0)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_7vlva")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
