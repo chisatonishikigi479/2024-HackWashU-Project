@@ -46,6 +46,7 @@ func _process(delta):
 		endedTime += delta
 		if endedTime >= endedTimeLimit:
 			queue_free()
+			Globalvariables.inMinigame = false
 		
 		if karmalost == 0:
 			if not alreadyRewarded:

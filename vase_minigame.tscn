@@ -114,7 +114,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Use the left and right keys to stabilize the vase!"
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -4000
+z_index = -10
 position = Vector2(651, 355)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
