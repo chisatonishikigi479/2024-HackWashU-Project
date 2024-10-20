@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlpch"]
-size = Vector2(77, 74)
+size = Vector2(31, 74)
 
 [node name="Spike" type="Area2D" groups=["spikes"]]
 script = ExtResource("1_cqkgd")
