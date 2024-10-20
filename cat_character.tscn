@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://blbefrbanar0e"]
+
+[ext_resource type="Script" path="res://CatCharacter.gd" id="1_2qdwr"]
+[ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="2_u3ivy"]
+[ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="3_503y4"]
+[ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="4_wrnsn"]
+[ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="5_o1mbf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sulb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u3ivy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_503y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wrnsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o1mbf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7q8r"]
+size = Vector2(115, 95)
+
+[node name="CatCharacter" type="CharacterBody2D" groups=["cat"]]
+z_index = 4090
+z_as_relative = false
+position = Vector2(0, 635)
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("1_2qdwr")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.677419, 0.724638)
+sprite_frames = SubResource("SpriteFrames_0sulb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_m7q8r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(300, 0)
+limit_left = -300
+limit_bottom = 720

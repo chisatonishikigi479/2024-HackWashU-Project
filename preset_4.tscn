@@ -9,6 +9,7 @@
 size = Vector2(2090, 895.75)
 
 [node name="Preset4" type="Node2D"]
+z_index = -290
 script = ExtResource("1_84nis")
 
 [node name="LongPlatform" parent="." instance=ExtResource("1_tqiv4")]

@@ -9,6 +9,7 @@
 size = Vector2(1798, 895.75)
 
 [node name="Preset1" type="Node2D"]
+z_index = -290
 script = ExtResource("1_0ceh3")
 
 [node name="Spike" parent="." instance=ExtResource("1_om8nm")]

@@ -34,7 +34,7 @@ func _ready():
 		preset.position = Vector2(width, height)
 		print("spawned at " + str(preset.position))
 		width += preset.width
-		preset.z_index = 400
+		#preset.z_index = 450
 		if (index == 2):
 			print("this is the case")
 			if randi() % 2 == 0:
@@ -57,6 +57,7 @@ func _process(delta):
 	$BG.position = $CatCharacter/Camera2D.get_screen_center_position()
 	currDistance = $CatCharacter.position.x
 	
+	print("camera position: " + str($CatCharacter/Camera2D.get_screen_center_position()))
 	var percentage = min(100, round(100 * (currDistance / distance_goal)))
 	$ProgressLabel.text = "Progress: " + str(percentage) + "%"
 	
@@ -71,9 +72,8 @@ func _process(delta):
 			alreadyIncrementedKarma = true
 		completedTime += delta
 		if completedTime >= completedTimeDelay:
-			get_tree().current_scene.visible = true
 			Globalvariables.inMinigame = false
-			queue_free()
+			get_tree().change_scene_to_file("res://maze_generation_manager.tscn")
 		pass
 	
 	pass

@@ -17,6 +17,8 @@ animations = [{
 }]
 
 [node name="MazeGenerationManager" type="Node2D"]
+z_index = -5
+z_as_relative = false
 script = ExtResource("1_5lm7m")
 
 [node name="CatProtagonist" parent="." groups=["protagonist"] instance=ExtResource("2_xcoxq")]
@@ -25,7 +27,7 @@ position = Vector2(76, 592)
 [node name="CatCamera" type="Camera2D" parent="CatProtagonist"]
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -100
+z_index = -4000
 position = Vector2(570, 346)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

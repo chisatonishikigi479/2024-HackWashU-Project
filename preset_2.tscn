@@ -99,4 +99,5 @@ position = Vector2(1113, 750)
 position = Vector2(1312, 750)
 
 [node name="LongPlatform10" parent="." instance=ExtResource("1_qjfui")]
+z_index = -290
 position = Vector2(1512, 750)

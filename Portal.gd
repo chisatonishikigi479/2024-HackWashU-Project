@@ -44,17 +44,28 @@ func _process(delta):
 			#Remember to change that variable to false after minigame exited!
 			if minigame == 0: #vase minigame
 				minigamescreen = vaseminigamescene.instantiate()
+				minigamescreen.z_index = 1000
+				Globalvariables.isLoading = false
+				get_parent().add_child(minigamescreen)
+				minigamescreen.set_visible(true)
+				visible = false
 			elif minigame == 1: #mouse minigame
 				minigamescreen = mouseminigamescene.instantiate()
+				minigamescreen.z_index = 1000
+				Globalvariables.isLoading = false
+				get_parent().add_child(minigamescreen)
+				minigamescreen.set_visible(true)
+				visible = false
 			elif minigame == 2: #parkour minigame
-				minigamescreen = parkourminigamescene.instantiate()
-				
+				Globalvariables.maze = get_parent().maze
+				Globalvariables.resume = true
+				Globalvariables.fishCoords = get_parent().fish_coords
+				Globalvariables.characterPos = get_parent().get_node("CatProtagonist").global_position
+				Globalvariables.setOfCoords = get_parent().setOfCoords
+				get_tree().change_scene_to_file("res://parkour_minigame.tscn")
+						
 
-			Globalvariables.isLoading = false
-			get_parent().add_child(minigamescreen)
-			minigamescreen.z_index = 4050
-			minigamescreen.set_visible(true)
-			visible = false
+			
 	pass
 
 

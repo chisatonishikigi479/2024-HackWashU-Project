@@ -15,12 +15,12 @@ var ducking = false
 
 
 func _physics_process(delta):
+
 	# Add the gravity.
 	
 	
-	
-	
 	if not isDead and (not get_parent().completed):
+		print("global position of cat: " + str(global_position))
 		if not is_on_floor():
 			# play jump animation!
 			velocity.y += gravity * delta
@@ -62,10 +62,8 @@ func _physics_process(delta):
 			alreadySignalled = true
 		diedTime += delta
 		if diedTime >= diedTimeDelay:
-			get_tree().current_scene.visible = true
 			Globalvariables.inMinigame = false
-			queue_free()
-			get_parent().queue_free()
+			get_tree().change_scene_to_file("res://maze_generation_manager.tscn")
 
 
 

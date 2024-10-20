@@ -18,6 +18,9 @@ animations = [{
 size = Vector2(106, 112)
 
 [node name="Hawk" type="Area2D" groups=["hawks"]]
+z_index = 500
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_w0804")
 metadata/_edit_group_ = true
 
