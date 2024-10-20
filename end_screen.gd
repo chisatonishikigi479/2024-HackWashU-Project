@@ -8,10 +8,12 @@ func _ready():
 	$CatGod.isHappy = Globalvariables.karma >= 0
 	if Globalvariables.karma >= 0:
 		$BG/AnimatedSprite2D.play("heaven")
+		$CatGod/AnimatedSprite2D.play("happy")
 		$HeavenMusic.play()
 		$FinalKarmaCount.text = "Total karma: " + str(Globalvariables.karma) + " (positive). You are sent to heaven."
 	else:
 		$BG/AnimatedSprite2D.play("hell")
+		$CatGod/AnimatedSprite2D.play("hell")
 		$HellMusic.play()
 		$FinalKarmaCount.text = "Total karma: " + str(Globalvariables.karma) + " (negative). You are sent to hell."
 	pass # Replace with function body.
@@ -26,10 +28,13 @@ func _on_bribe_button_bribed():
 	
 	$CatGod.isHappy = Globalvariables.karma >= 0
 	if Globalvariables.karma >= 0:
-		$BG/AnimatedSprite2D.play("heaven")
+		$HellMusic.stop()
+		$HeavenMusic.play()
+		$BG/AnimatedSprite2D.play("angry")
 		$FinalKarmaCount.text = "Total karma: " + str(Globalvariables.karma) + " (positive). You are sent to heaven, but only because you bribed me."
 	else:
 		$BG/AnimatedSprite2D.play("hell")
+		$CatGod/AnimatedSprite2D.play("happy")
 		$FinalKarmaCount.text = "Total karma: " + str(Globalvariables.karma) + " (negative). Even your fish weren't enough to entice me."
 	
 	pass # Replace with function body.
