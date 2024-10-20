@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://e5jcp3l75oee"]
+[gd_scene load_steps=15 format=3 uid="uid://e5jcp3l75oee"]
 
 [ext_resource type="Script" path="res://mouse_minigame.gd" id="1_bva7x"]
 [ext_resource type="Script" path="res://Cat.gd" id="2_hvomw"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="6_22yga"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="6_widq5"]
 [ext_resource type="FontFile" uid="uid://ctji7yn0p70h8" path="res://font/Jersey10Charted-Regular.ttf" id="7_hmin7"]
+[ext_resource type="Texture2D" uid="uid://beg2noxfv5iua" path="res://tempted1.png" id="7_pxjcy"]
+[ext_resource type="Texture2D" uid="uid://bpsh4nr8m76ep" path="res://tempted2.png" id="8_rqfvm"]
+[ext_resource type="Texture2D" uid="uid://b8dy8wmkothvs" path="res://tempted3.png" id="9_cbv4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_opoyj"]
 animations = [{
@@ -27,6 +30,20 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pxjcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rqfvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cbv4l")
+}],
+"loop": true,
+"name": &"enticed",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2mvr"]
@@ -52,8 +69,9 @@ script = ExtResource("2_hvomw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
 position = Vector2(3.02968, 7.59686)
-scale = Vector2(0.917, 1)
+scale = Vector2(0.6, 0.654)
 sprite_frames = SubResource("SpriteFrames_opoyj")
+animation = &"enticed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
 position = Vector2(7, 11)

@@ -59,10 +59,10 @@ func _process(delta):
 	#position.y = clamp(position.y, 0, 720)
 	
 	if position.x - lastPos.x > 0:
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("enticed")
 		isMovingRight = true
 	elif position.x - lastPos.x < 0:
-		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.play("enticed")
 		isMovingRight = false
 	else:
 		$AnimatedSprite2D.frame = 1
