@@ -176,13 +176,14 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_4p362")
 
 [node name="FishLabel" type="RichTextLabel" parent="BribeButton"]
+custom_minimum_size = Vector2(5, 0)
 offset_left = -204.0
 offset_top = -107.0
 offset_right = 222.0
 offset_bottom = 95.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 25
 text = "Bribe with collected fish (0)"
 
 [node name="HeavenMusic" type="AudioStreamPlayer" parent="."]
