@@ -47,7 +47,7 @@ script = ExtResource("2_hvomw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
 position = Vector2(3.02968, 7.59686)
-scale = Vector2(4.25615, 4.64375)
+scale = Vector2(0.917, 1)
 sprite_frames = SubResource("SpriteFrames_opoyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
