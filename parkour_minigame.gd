@@ -26,7 +26,7 @@ func _ready():
 	#randomly generate presets to form a parkour map
 	var width = 0
 	var height = 0
-	var index = randi() % presetscenes.size()
+	var index = 0 #fixes situations where the player has very little time to react upon spawn
 	var preset = presetscenes[index].instantiate()
 	
 	while width < distance_goal - 2000:
