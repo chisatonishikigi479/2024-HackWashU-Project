@@ -10,6 +10,7 @@ var portalCoords
 var fishkarma = 0
 var characterPos
 var setOfCoords
+var minigameindices
 
 var resume = false
 

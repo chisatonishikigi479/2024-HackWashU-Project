@@ -13,6 +13,8 @@ var minigamescreen = null
 var vaseminigamescene = preload("res://vase_minigame.tscn")
 var mouseminigamescene = preload("res://mouse_minigame.tscn")
 var parkourminigamescene = preload("res://parkour_minigame.tscn")
+
+signal opened (index)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -43,6 +45,7 @@ func _process(delta):
 			#TODO: instantiate minigame screen here depending on the value of minigame
 			#Remember to change that variable to false after minigame exited!
 			if minigame == 0: #vase minigame
+				emit_signal("opened", 0)
 				minigamescreen = vaseminigamescene.instantiate()
 				minigamescreen.z_index = 1000
 				Globalvariables.isLoading = false
@@ -50,6 +53,7 @@ func _process(delta):
 				minigamescreen.set_visible(true)
 				visible = false
 			elif minigame == 1: #mouse minigame
+				emit_signal("opened", 1)
 				minigamescreen = mouseminigamescene.instantiate()
 				minigamescreen.z_index = 1000
 				Globalvariables.isLoading = false
@@ -57,12 +61,14 @@ func _process(delta):
 				minigamescreen.set_visible(true)
 				visible = false
 			elif minigame == 2: #parkour minigame
+				emit_signal("opened", 2)
 				Globalvariables.maze = get_parent().maze
 				Globalvariables.resume = true
 				Globalvariables.fishkarma = get_parent().fishkarma
 				Globalvariables.fishCoords = get_parent().fish_coords
 				Globalvariables.characterPos = get_parent().get_node("CatProtagonist").global_position
 				Globalvariables.setOfCoords = get_parent().setOfCoords
+				Globalvariables.minigameindices = get_parent().minigameindices
 				get_tree().change_scene_to_file("res://parkour_minigame.tscn")
 						
 			

@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://blbefrbanar0e"]
+[gd_scene load_steps=11 format=3 uid="uid://blbefrbanar0e"]
 
 [ext_resource type="Script" path="res://CatCharacter.gd" id="1_2qdwr"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="2_u3ivy"]
 [ext_resource type="Texture2D" uid="uid://dg2f5w4qvplg0" path="res://Finished Images/cat_protagonist-1.png" id="3_503y4"]
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="4_wrnsn"]
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="5_o1mbf"]
+[ext_resource type="Texture2D" uid="uid://b6aqaebi5eu7s" path="res://Finished Images/crouch-0.png" id="6_5xe2f"]
+[ext_resource type="Texture2D" uid="uid://cjblyb6evf67m" path="res://Finished Images/crouch-1.png" id="7_ymcth"]
+[ext_resource type="Texture2D" uid="uid://cr160gmgcy3nx" path="res://Finished Images/crouch-2.png" id="8_8ntxg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0sulb"]
 animations = [{
@@ -23,6 +26,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5xe2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ymcth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8ntxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ymcth")
+}],
+"loop": true,
+"name": &"ducking",
 "speed": 8.0
 }]
 
