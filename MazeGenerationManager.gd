@@ -65,6 +65,7 @@ func _ready():
 		maze = Globalvariables.maze
 		$CatProtagonist.global_position = Globalvariables.characterPos
 		fish_coords = Globalvariables.fishCoords
+		fishkarma = Globalvariables.fishkarma
 		generate_walls_2(maze)
 	#when the player dies, regenerate the maze from the player node (call reset_variables from there)
 	pass # Replace with function body.
@@ -231,6 +232,7 @@ func generate_walls(maze):
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	Globalvariables.fishkarma = fishkarma
 	$FishLabel.text = "Fish Collected: " + str(fishkarma)
 	$FishLabel.global_position = $CatProtagonist/CatCamera.get_screen_center_position() + Vector2(100, -300)
 	

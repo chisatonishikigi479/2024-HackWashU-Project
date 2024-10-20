@@ -7,6 +7,7 @@ var isLoading = false
 var fishCoords
 var maze
 var portalCoords
+var fishkarma = 0
 var characterPos
 var setOfCoords
 

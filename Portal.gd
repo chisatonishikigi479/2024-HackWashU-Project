@@ -59,12 +59,12 @@ func _process(delta):
 			elif minigame == 2: #parkour minigame
 				Globalvariables.maze = get_parent().maze
 				Globalvariables.resume = true
+				Globalvariables.fishkarma = get_parent().fishkarma
 				Globalvariables.fishCoords = get_parent().fish_coords
 				Globalvariables.characterPos = get_parent().get_node("CatProtagonist").global_position
 				Globalvariables.setOfCoords = get_parent().setOfCoords
 				get_tree().change_scene_to_file("res://parkour_minigame.tscn")
 						
-
 			
 	pass
 
