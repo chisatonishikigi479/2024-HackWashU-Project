@@ -1,11 +1,11 @@
 extends Node2D
 
 var maze
-var EASY_DIM = 7
+var EASY_DIM = 8
 var MEDIUM_DIM = 12
 var HARD_DIM = 20
 var EXTREME_DIM = 25
-var dim = 7
+var dim = 8
 var offsetY = 23
 var offsetX = -11
 var wallunit = 160
