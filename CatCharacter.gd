@@ -56,12 +56,15 @@ func _physics_process(delta):
 	else:
 		#play death animation!
 		if not alreadySignalled:
+			print("died at " + str(position.x))
 			emit_signal("died")
 			Globalvariables.karma -= 5
 			alreadySignalled = true
 		diedTime += delta
 		if diedTime >= diedTimeDelay:
 			get_tree().reload_current_scene()
+			#queue_free()
+			#get_parent().queue_free()
 			#Globalvariables.inMinigame = false
 
 

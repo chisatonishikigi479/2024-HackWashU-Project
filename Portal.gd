@@ -12,6 +12,7 @@ var minigamescreen = null
 
 var vaseminigamescene = preload("res://vase_minigame.tscn")
 var mouseminigamescene = preload("res://mouse_minigame.tscn")
+var parkourminigamescene = preload("res://parkour_minigame.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -38,9 +39,8 @@ func _process(delta):
 				minigamescreen = vaseminigamescene.instantiate()
 			elif minigame == 1: #mouse minigame
 				minigamescreen = mouseminigamescene.instantiate()
-			elif minigame == 2:
-				#change this later to minigame 2
-				minigamescreen = vaseminigamescene.instantiate()
+			elif minigame == 2: #parkour minigame
+				minigamescreen = parkourminigamescene.instantiate()
 				
 			Globalvariables.isLoading = false
 			get_parent().add_child(minigamescreen)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brr5lflygww62"]
+[gd_scene load_steps=11 format=3 uid="uid://brr5lflygww62"]
 
 [ext_resource type="Script" path="res://parkour_minigame.gd" id="1_8f5rf"]
 [ext_resource type="Texture2D" uid="uid://dhusjyiewvswx" path="res://Finished Images/cat_protagonist-0.png" id="1_hi5p2"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://CatCharacter.gd" id="3_1bjth"]
 [ext_resource type="Texture2D" uid="uid://bjoi2ftmro4ci" path="res://Finished Images/cat_protagonist-2.png" id="3_tyh5g"]
 [ext_resource type="Texture2D" uid="uid://clonmh7y4huty" path="res://Finished Images/cat_protagonist-blink.png" id="4_21ids"]
-[ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="8_8bhlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uls8k"]
 size = Vector2(1484, 176)
@@ -34,17 +33,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7q8r"]
 size = Vector2(115, 95)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_munna"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_8bhlh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="ParkourMinigame" type="Node2D"]
 script = ExtResource("1_8f5rf")
@@ -94,13 +82,5 @@ offset_bottom = 282.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Progress: 0%"
-
-[node name="BG" type="Area2D" parent="."]
-z_index = -10
-position = Vector2(633, 331)
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG"]
-sprite_frames = SubResource("SpriteFrames_munna")
 
 [connection signal="died" from="CatCharacter" to="." method="_on_cat_character_died"]

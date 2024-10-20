@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://d6p66apo2vlj"]
+
+[ext_resource type="PackedScene" uid="uid://djyb2h07fmwwv" path="res://long_platform.tscn" id="1_44b42"]
+[ext_resource type="Script" path="res://preset_3.gd" id="1_xypri"]
+[ext_resource type="PackedScene" uid="uid://7p3dwybsg58v" path="res://spike.tscn" id="2_pkctt"]
+[ext_resource type="PackedScene" uid="uid://c4fllmxujyehg" path="res://short platform.tscn" id="3_wfjth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkl5c"]
+size = Vector2(2542, 895.75)
+
+[node name="Preset3" type="Node2D"]
+script = ExtResource("1_xypri")
+
+[node name="Platform6" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(2225, 367)
+
+[node name="LongPlatform2" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(108, 750)
+
+[node name="Spike" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(557, 667)
+
+[node name="Spike2" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(639, 667)
+
+[node name="Spike4" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(802, 667)
+
+[node name="Spike5" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(883, 667)
+
+[node name="Spike6" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(965, 667)
+
+[node name="Spike7" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1046, 667)
+
+[node name="Spike8" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1128, 667)
+
+[node name="Spike9" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1209, 667)
+
+[node name="Spike10" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1291, 667)
+
+[node name="Spike11" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1370, 668)
+
+[node name="Spike12" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1452, 668)
+
+[node name="Platform" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(732, 690)
+
+[node name="LongPlatform" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1923, 447)
+
+[node name="Spike13" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1981, 366)
+
+[node name="Platform4" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(2225, 66)
+
+[node name="Spike14" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1535, 667)
+
+[node name="Spike15" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1616, 667)
+
+[node name="Spike16" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1698, 667)
+
+[node name="Spike17" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1779, 667)
+
+[node name="Spike18" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1861, 667)
+
+[node name="Spike19" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(1942, 667)
+
+[node name="Spike20" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2024, 667)
+
+[node name="Spike21" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2103, 668)
+
+[node name="Spike22" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2185, 668)
+
+[node name="Spike23" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2262, 667)
+
+[node name="Spike24" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2344, 667)
+
+[node name="Spike25" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2423, 668)
+
+[node name="Spike26" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2505, 668)
+
+[node name="Spike27" parent="." instance=ExtResource("2_pkctt")]
+position = Vector2(2209, 133)
+rotation = 3.14159
+
+[node name="LongPlatform3" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(312, 750)
+
+[node name="LongPlatform4" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(518, 750)
+
+[node name="LongPlatform5" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(722, 750)
+
+[node name="LongPlatform6" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(928, 750)
+
+[node name="LongPlatform7" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1132, 750)
+
+[node name="LongPlatform8" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1333, 750)
+
+[node name="LongPlatform9" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1539, 750)
+
+[node name="LongPlatform10" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1743, 750)
+
+[node name="LongPlatform11" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(1949, 750)
+
+[node name="LongPlatform12" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(2153, 750)
+
+[node name="Platform5" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(1389, 462)
+
+[node name="FullArea" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FullArea"]
+position = Vector2(1272, 291.875)
+shape = SubResource("RectangleShape2D_kkl5c")
+metadata/_edit_lock_ = true
+
+[node name="Platform7" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(1066, 575)
+
+[node name="LongPlatform13" parent="." instance=ExtResource("1_44b42")]
+position = Vector2(2345, 750)
+
+[node name="Platform8" parent="." instance=ExtResource("3_wfjth")]
+position = Vector2(2506, 768)
