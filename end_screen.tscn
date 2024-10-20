@@ -111,7 +111,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Retry"]
 position = Vector2(0, -1.90735e-06)
-scale = Vector2(0.836, 0.793333)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_hpea4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Retry"]

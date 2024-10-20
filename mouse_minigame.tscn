@@ -68,6 +68,7 @@ theme_override_font_sizes/normal_font_size = 60
 text = "Round 1 of 5"
 
 [node name="KarmaLabel" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 822.0
 offset_top = 98.0
 offset_right = 1223.0
