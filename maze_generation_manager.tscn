@@ -43,6 +43,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Fish Collected: 0"
 
 [node name="GiganticAssBlackScreen" parent="." instance=ExtResource("4_e6cfg")]
+visible = false
 
 [node name="KarmaLabel" type="RichTextLabel" parent="."]
 z_index = 500
