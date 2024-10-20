@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu452ty7kp3pi"]
+
+[ext_resource type="Script" path="res://Hawk.gd" id="1_w0804"]
+[ext_resource type="Texture2D" uid="uid://c84pj1p4ced84" path="res://hawk.png" id="2_wxpn8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cywi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wxpn8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vfpn"]
+size = Vector2(106, 112)
+
+[node name="Hawk" type="Area2D" groups=["hawks"]]
+script = ExtResource("1_w0804")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.70625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_cywi0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_2vfpn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

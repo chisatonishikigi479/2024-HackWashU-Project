@@ -1,150 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcqquh4wutm7j"]
+[gd_scene load_steps=5 format=3 uid="uid://bcqquh4wutm7j"]
 
 [ext_resource type="Script" path="res://Mouse.gd" id="1_5ii1f"]
-[ext_resource type="Texture2D" uid="uid://mys3kiihjqfi" path="res://Finished Images/mouse.png" id="2_461vp"]
-[ext_resource type="Texture2D" uid="uid://d3od2da7noeft" path="res://Finished Images/mouse-death.png" id="2_qp56f"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_46ij0"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(1800, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7x0qh"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(2100, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ou16"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(2400, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7khfj"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(2700, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ollsg"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(3000, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2b1nw"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(0, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4w3t"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(300, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yncid"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(600, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3k75t"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(900, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jtudh"]
-atlas = ExtResource("2_qp56f")
-region = Rect2(1500, 0, 300, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfxfs"]
-atlas = ExtResource("2_461vp")
-region = Rect2(300, 0, 300, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xffby"]
-atlas = ExtResource("2_461vp")
-region = Rect2(0, 0, 300, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4tv6"]
-atlas = ExtResource("2_461vp")
-region = Rect2(600, 0, 300, 98)
+[ext_resource type="Texture2D" path="res://mouse.png" id="2_47qyb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n61e7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46ij0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7x0qh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ou16")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7khfj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ollsg")
+"texture": ExtResource("2_47qyb")
 }],
 "loop": true,
-"name": &"death0",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2b1nw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4w3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yncid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3k75t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jtudh")
-}],
-"loop": true,
-"name": &"death1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2b1nw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4w3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yncid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3k75t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jtudh")
-}],
-"loop": true,
-"name": &"death2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gfxfs")
-}],
-"loop": true,
-"name": &"skin0",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xffby")
-}],
-"loop": true,
-"name": &"skin1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4tv6")
-}],
-"loop": true,
-"name": &"skin2",
+"name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmh7"]
-size = Vector2(69, 57)
+size = Vector2(95, 84)
 
 [node name="Mouse" type="Area2D" groups=["mice"]]
 script = ExtResource("1_5ii1f")
@@ -153,10 +24,9 @@ script = ExtResource("1_5ii1f")
 position = Vector2(0.999994, -3.8147e-06)
 scale = Vector2(0.6125, 0.55625)
 sprite_frames = SubResource("SpriteFrames_n61e7")
-animation = &"death2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-14.5, -0.5)
+position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_cmmh7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
