@@ -19,9 +19,11 @@ func _process(delta: float) -> void:
 func _on_start_button_pressed() -> void:
 	pressed +=1 #prevents multiple generations
 	if pressed ==1:
+		$AudioButton.play()
 		get_tree().change_scene_to_file("res://maze_generation_manager.tscn")
 
 func _on_difficulty_button_r_pressed() -> void:
+	$AudioButton.play()
 	if Globalvariables.difficulty == "Extreme":
 		Globalvariables.difficulty = "Easy"
 	else:
@@ -34,6 +36,7 @@ func _on_difficulty_button_r_pressed() -> void:
 	get_node("MarginContainer/DifficultyLabel").text = str("Difficulty: " + Globalvariables.difficulty)
 
 func _on_difficulty_button_l_pressed() -> void:
+	$AudioButton.play()
 	if Globalvariables.difficulty == "Easy":
 		Globalvariables.difficulty = "Extreme"
 	else:

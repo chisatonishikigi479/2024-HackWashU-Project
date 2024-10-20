@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g2yvh1h15ju1"]
+[gd_scene load_steps=10 format=3 uid="uid://g2yvh1h15ju1"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_b8huk"]
 [ext_resource type="Texture2D" uid="uid://dy871bvw5q2e7" path="res://title_screen_bg.png" id="2_6oun6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://twfh7rmwf8xx" path="res://difficultybuttonR.png" id="4_s3yda"]
 [ext_resource type="Script" path="res://difficulty_button_r.gd" id="4_xi7pi"]
 [ext_resource type="Texture2D" uid="uid://hnr5tx3o1qqu" path="res://difficultybuttonL.png" id="7_c3pef"]
+[ext_resource type="AudioStream" uid="uid://jbexia5r2nw5" path="res://Audio/click.wav" id="8_3eqxl"]
 [ext_resource type="AudioStream" uid="uid://bmacnq5f4thvp" path="res://Fire.wav" id="8_wp6d6"]
 
 [node name="Title Screen" type="Control"]
@@ -52,10 +53,10 @@ script = ExtResource("4_f02rt")
 
 [node name="DifficultyButtonR" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 416.0
-offset_right = 1160.0
-offset_bottom = 576.0
+offset_left = 989.0
+offset_top = 409.0
+offset_right = 1149.0
+offset_bottom = 569.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_s3yda")
 script = ExtResource("4_xi7pi")
@@ -69,6 +70,10 @@ offset_bottom = 576.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_c3pef")
 script = ExtResource("4_xi7pi")
+
+[node name="AudioButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3eqxl")
+volume_db = -30.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_wp6d6")
