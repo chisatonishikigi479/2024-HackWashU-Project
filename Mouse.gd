@@ -2,7 +2,7 @@ extends Area2D
 
 signal died
 var deathTime = 0.0
-var deathDelay = 1.2
+var deathDelay = 1.0
 var isDead = false
 
 var angle = PI/3 #in radians
@@ -20,6 +20,7 @@ var timeLimitAtTarget = 5.0
 var exitingTarget = false
 var timeElapsedExitingTarget = 0.0
 var timeLimitExitingTarget = 2.5
+var skinType = str(randi_range(0, 2)) 
 
 var screen_center = Vector2(640, 360)
 
@@ -28,14 +29,14 @@ func _ready():
 	orig_pos = screen_center + orig_distance*Vector2(cos(angle), sin(angle))
 	position = orig_pos
 	target_pos = screen_center + radius*Vector2(cos(angle), sin(angle))
-	
+	$AnimatedSprite2D.play("skin" + skinType) #Random skin for the mouse
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if isDead:
-		$AnimatedSprite2D.play("death")
+		$AnimatedSprite2D.play("death" + skinType)
 		deathTime += delta
 		if deathTime >= deathDelay: 
 			emit_signal("died")
@@ -45,6 +46,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.play("default")
 		if goingToTarget:
+			if cos(angle) <= 0: #makes the mouse turn the correct way
+				$AnimatedSprite2D.flip_h = true
+			else:
+				$AnimatedSprite2D.flip_h = false
 			position += -moveSpeed * delta * Vector2(cos(angle), sin(angle))
 			print("position: " + str(position))
 			timeElapsedToTarget += delta
@@ -61,6 +66,10 @@ func _process(delta):
 			
 			
 		if exitingTarget:
+			if cos(angle) >= 0: #makes the mouse turn the correct way
+				$AnimatedSprite2D.flip_h = true
+			else:
+				$AnimatedSprite2D.flip_h = false
 			position += moveSpeed * delta * Vector2(cos(angle), sin(angle))
 			print("position: " + str(position))
 			timeElapsedExitingTarget += delta
