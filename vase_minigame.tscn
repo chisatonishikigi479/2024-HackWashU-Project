@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://drbx1k3n814mg"]
 
 [ext_resource type="Script" path="res://vase_minigame.gd" id="1_ykelr"]
-[ext_resource type="Texture2D" uid="uid://cd6kodn88rc3w" path="res://Finished Images/bookshelf.png" id="2_su6gq"]
+[ext_resource type="Texture2D" uid="uid://b1fynu0dglwbt" path="res://book.png" id="2_qlnlb"]
 [ext_resource type="Script" path="res://Vase.gd" id="3_b573w"]
 [ext_resource type="Texture2D" uid="uid://bxhojxhc8bkh1" path="res://vase.png" id="3_x033j"]
 [ext_resource type="Texture2D" uid="uid://b1jym6qt5r3gq" path="res://background.png" id="5_chai6"]
@@ -10,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_su6gq")
+"texture": ExtResource("2_qlnlb")
 }],
 "loop": true,
 "name": &"default",
@@ -52,29 +52,29 @@ animations = [{
 script = ExtResource("1_ykelr")
 
 [node name="Bookshelf" type="Area2D" parent="."]
-position = Vector2(603, 717)
-scale = Vector2(3, 3)
+position = Vector2(565, 478)
+scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf"]
 sprite_frames = SubResource("SpriteFrames_cnxa3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf"]
-visible = false
 position = Vector2(2.91669, 3.05176e-05)
 shape = SubResource("RectangleShape2D_mdasc")
 
 [node name="Vase" type="Area2D" parent="." groups=["vase"]]
 position = Vector2(375, 132)
+rotation = -0.0174533
 script = ExtResource("3_b573w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vase"]
-position = Vector2(-3, 246)
+position = Vector2(2, 193)
 sprite_frames = SubResource("SpriteFrames_b6ge6")
 offset = Vector2(0, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vase"]
-position = Vector2(-5, 45)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_6360d")
 
 [node name="Ground" type="Area2D" parent="." groups=["ground"]]
@@ -114,7 +114,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Use the left and right keys to stabilize the vase!"
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -4000
+z_index = -10
 position = Vector2(651, 355)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

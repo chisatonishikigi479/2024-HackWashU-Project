@@ -11,6 +11,7 @@ var alreadyEmittedSignal = false
 var minigamescreen = null
 
 var vaseminigamescene = preload("res://vase_minigame.tscn")
+var mouseminigamescene = preload("res://mouse_minigame.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	if minigamescreen != null:
-		minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-500, -300)
+		minigamescreen.global_position = get_parent().get_node("CatProtagonist").get_node("CatCamera").get_screen_center_position() + Vector2(-640, -360)
 	
 	if not entered:
 		$AnimatedSprite2D.play("default")
@@ -39,7 +40,7 @@ func _process(delta):
 				minigamescreen.set_visible(true)
 			elif minigame == 1:
 				#change this later to minigame 1
-				minigamescreen = vaseminigamescene.instantiate()
+				minigamescreen = mouseminigamescene.instantiate()
 				get_parent().add_child(minigamescreen)
 				minigamescreen.z_index = 4050
 				minigamescreen.set_visible(true)
