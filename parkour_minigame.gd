@@ -34,6 +34,7 @@ func _ready():
 		preset.position = Vector2(width, height)
 		print("spawned at " + str(preset.position))
 		width += preset.width
+		preset.z_index = 250
 		if (index == 2):
 			print("this is the case")
 			if randi() % 2 == 0:

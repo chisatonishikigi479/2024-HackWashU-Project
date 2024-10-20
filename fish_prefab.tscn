@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://83qf3hxao1sg"]
+[gd_scene load_steps=20 format=3 uid="uid://83qf3hxao1sg"]
 
 [ext_resource type="Script" path="res://FishPrefab.gd" id="1_wdlxt"]
-[ext_resource type="Texture2D" path="res://fish.png" id="2_h67it"]
 [ext_resource type="Texture2D" uid="uid://bya3ps3yjy5m7" path="res://Finished Images/fish-collect.png" id="2_l72bt"]
+[ext_resource type="Texture2D" uid="uid://dscro307q5krl" path="res://Finished Images/fish.png" id="3_wl5x0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sw6sd"]
 atlas = ExtResource("2_l72bt")
@@ -44,6 +44,22 @@ region = Rect2(2400, 0, 300, 175)
 atlas = ExtResource("2_l72bt")
 region = Rect2(2700, 0, 300, 175)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwco2"]
+atlas = ExtResource("3_wl5x0")
+region = Rect2(0, 0, 300, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7abh"]
+atlas = ExtResource("3_wl5x0")
+region = Rect2(300, 0, 300, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxh0y"]
+atlas = ExtResource("3_wl5x0")
+region = Rect2(600, 0, 300, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhm3f"]
+atlas = ExtResource("3_wl5x0")
+region = Rect2(900, 0, 300, 109)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vlva"]
 animations = [{
 "frames": [{
@@ -83,7 +99,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_h67it")
+"texture": SubResource("AtlasTexture_hwco2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7abh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxh0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhm3f")
 }],
 "loop": true,
 "name": &"default",
@@ -99,7 +124,6 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vlva")
-animation = &"collect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)

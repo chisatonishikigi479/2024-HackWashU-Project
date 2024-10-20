@@ -59,6 +59,7 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_uls8k")
 
 [node name="CatCharacter" type="CharacterBody2D" parent="." groups=["cat"]]
+z_index = 300
 position = Vector2(0, 683)
 script = ExtResource("3_1bjth")
 metadata/_edit_group_ = true
@@ -79,6 +80,7 @@ limit_bottom = 720
 
 [node name="ResultsLabel" type="RichTextLabel" parent="."]
 visible = false
+z_index = 400
 offset_left = 792.0
 offset_right = 1255.0
 offset_bottom = 173.0
@@ -87,6 +89,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Failed! -5 Karma"
 
 [node name="ProgressLabel" type="RichTextLabel" parent="."]
+z_index = 400
 offset_left = 792.0
 offset_top = 173.0
 offset_right = 1255.0
@@ -96,7 +99,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Progress: 0%"
 
 [node name="BG" type="Area2D" parent="."]
-z_index = -5
+z_index = 200
 position = Vector2(633, 331)
 metadata/_edit_group_ = true
 
