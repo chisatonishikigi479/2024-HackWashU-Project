@@ -24,12 +24,10 @@ func _physics_process(delta):
 		if not is_on_floor():
 			# play jump animation!
 			velocity.y += gravity * delta
-			
+			$AnimatedSprite2D.play("default")
 		else:
 			#play walk/run animation!
 			pass
-		
-		$AnimatedSprite2D.play("default") #filler animation code
 
 		# Handle jump.
 		if Input.is_action_just_pressed("move_up") and is_on_floor():
@@ -40,6 +38,7 @@ func _physics_process(delta):
 			$CollisionShape2D.position.y = 40
 			$CollisionShape2D.scale.y = 0.25
 			ducking = true
+			$AnimatedSprite2D.play("ducking")
 		else:
 			$CollisionShape2D.position.y = 0
 			$CollisionShape2D.scale.y = 1
