@@ -20,15 +20,17 @@ grow_vertical = 2
 script = ExtResource("1_b8huk")
 
 [node name="TitleScreenBg" type="Sprite2D" parent="."]
-position = Vector2(641, 360)
+texture_filter = 1
+position = Vector2(640, 638)
+scale = Vector2(2.2309, 2.21528)
 texture = ExtResource("2_6oun6")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 318.0
-offset_right = 447.0
-offset_bottom = 463.0
+offset_left = 264.0
+offset_top = 384.0
+offset_right = 460.0
+offset_bottom = 500.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("4_jn02p")
 theme_override_font_sizes/font_size = 100
@@ -37,9 +39,9 @@ script = ExtResource("2_tpggw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 135.0
-offset_top = 474.0
-offset_right = 535.0
+offset_left = 179.0
+offset_top = 494.0
+offset_right = 548.0
 offset_bottom = 570.0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
@@ -48,16 +50,16 @@ layout_mode = 2
 [node name="DifficultyLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jn02p")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 text = "Difficulty: Easy"
 vertical_alignment = 1
 script = ExtResource("4_f02rt")
 
 [node name="DifficultyButtonR" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 339.0
+offset_left = 396.0
 offset_top = 576.0
-offset_right = 534.0
+offset_right = 591.0
 offset_bottom = 771.0
 scale = Vector2(0.7, 0.7)
 mouse_default_cursor_shape = 2
